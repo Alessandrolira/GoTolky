@@ -91,7 +91,7 @@ export default function Home() {
             Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa ferramenta, facilitando a vida no atendimento
           </p>
           <div className="w-full">
-            <img src="/mockupIphone.png" alt="" className="h-[300px] md:h-[400px] object-contain mx-auto" />
+            <img src="/MockupIphone.png" alt="" className="h-[300px] md:h-[400px] object-contain mx-auto" />
           </div>
           <div className="relative">
             <button
