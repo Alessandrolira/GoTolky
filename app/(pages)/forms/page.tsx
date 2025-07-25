@@ -106,9 +106,9 @@ export default function Forms() {
   }
 
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-[#0c0c1c] overflow-hidden px-4">
+    <div className="py-8 flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-[#0c0c1c] overflow-hidden px-4">
       {/* Círculos orbitais com efeito neon */}
-      <div className="absolute top-25 z-10 animate-pulse-slow">
+      <div className="animate-pulse-slow mb-8">
         <img
           src="./GoTolkyLogo.png"
           alt="GoTolky Logo"
@@ -117,7 +117,7 @@ export default function Forms() {
       </div>
       {/* Formulário */}
       <form
-        className="mt-[10rem] w-full max-w-2xl bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl px-10 py-12 text-white shadow-[0_0_10px_var(--azul)] relative z-20"
+        className="w-full max-w-2xl bg-white/5 backdrop-blur-xl border border-white/20 rounded-3xl px-10 py-12 text-white shadow-[0_0_10px_var(--azul)] relative z-20"
         onSubmit={(event: any) => {
           event.preventDefault()
           enviarDados()
