@@ -109,3 +109,7 @@ input:checked+.slider:before {
 .animate-gradient {
   animation: gradientShift 2s ease infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}

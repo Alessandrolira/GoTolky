@@ -52,19 +52,19 @@ export default function Home() {
                                 ${menuAberto ? "flex" : "hidden"} 
                                 md:static md:flex md:flex-row md:gap-5 md:p-0 md:bg-transparent md:shadow-none md:w-full`}
             >
-              <a href="">
+              <a href="#produto">
                 <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Produto</li>
               </a>
-              <a href="">
+              <a href="#personalizacao">
                 <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Personalização</li>
               </a>
-              <a href="">
+              <a href="#quemsomos">
                 <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Quem somos</li>
               </a>
-              <a href="">
+              <a href="#contato">
                 <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Contato</li>
               </a>
-              <a href="">
+              <a href="/forms">
                 <li className="bg-white text-black px-2 md:w-full rounded-full hover:opacity-80 transition-opacity hover:bg-[#25D366]">
                   Assine Já
                 </li>
@@ -79,7 +79,7 @@ export default function Home() {
           <p className="tracking-widest text-[1em] md:text-[1.6em] font-bold">OLÁ!</p>
         </div>
       </div>
-      <div className="flex justify-center items-center flex-col mt-10">
+      <div className="flex justify-center items-center flex-col mt-10" id="produto">
         <p className="font-bold text-[1.5em] mb-5">Produto</p>
         <p className="w-[80%] text-center">Imaginou personalizar uma IA para trabalhar como uma assistente ou até uma vendedora dos seus produtos?</p>
         <p className="text-[1.2em] font-bold mt-2 text-center w-[80%]">Para essa pergunta a GoTolky possui a ferramenta perfeita!</p>
@@ -218,7 +218,7 @@ export default function Home() {
           </ul>
         </div>
       </div>
-      <div className="bg-[var(--cinza)] flex justify-center flex-col items-center py-[100px]">
+      <div className="bg-[var(--cinza)] flex justify-center flex-col items-center py-[100px]" id="personalizacao">
         <h4 className="font-bold text-[1.5em] mb-20 text-center">Personalização</h4>
         <div className="flex flex-col md:flex-row justify-around items-center">
           <div className="px-10 md:w-[50em]">
@@ -235,7 +235,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center flex-col items-center py-[100px]">
+      <div className="flex justify-center flex-col items-center py-[100px]" id="quemsomos">
         <h5 className="font-bold text-[1.5em] mb-5">Quem Somos</h5>
         <img src="/GoTolkyLogo.png" alt="" className="w-[400px]" />
         <div className="px-10 mt-15 md:w-[100em]">
@@ -250,7 +250,7 @@ export default function Home() {
           <p>Foi com essa missão — facilitar e melhorar a experiência de atendimento — que a GoTolky nasceu: para tornar o relacionamento com seus clientes e funcionários mais humano, prático e inteligente.</p>
         </div>
       </div>
-      <div className="bg-[var(--branco)] text-[var(--background)] py-[25px] flex flex-col md:justify-center">
+      <div className="bg-[var(--branco)] text-[var(--background)] py-[25px] flex flex-col md:justify-center" id="contato">
         <div className="flex flex-col md:flex-row md:justify-around">
           <div className="text-left flex gap-1 mb-3 flex-col px-10">
             <h6 className="font-bold">Contato</h6>
