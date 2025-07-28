@@ -158,7 +158,7 @@ export default function Forms() {
 
           <input
             type="tel"
-            placeholder="seu telefone"
+            placeholder="Seu telefone"
             className="p-4 rounded-lg bg-white/10 border border-white/20 placeholder-white text-white focus:outline-none focus:ring-2 focus:ring-[var(--azul)] transition"
             value={telefone}
             onChange={(e) => formatarTelefone(e.target.value)}

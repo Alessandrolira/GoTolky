@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <div className="bg-[url(/fundoOpaco.png)] h-screen bg-cover bg-no-repeat">
-        <div className="py-5 px-4 md:px-15 bg-[#0e0e0e] flex justify-between items-center shadow-md shadow-white/30">
+        <div className="fixed w-full py-5 px-4 md:px-15 bg-[#0e0e0e] flex justify-between items-center shadow-md shadow-white/30">
           <div>
             <h2 className="font-bold text-[1.5em] text-white">GoTolky</h2>
           </div>
@@ -72,7 +72,7 @@ export default function Home() {
             </ul>
           </nav>
         </div>
-        <div className="flex justify-center items-center flex-col h-[80vh] gap-3">
+        <div className="pt-30 flex justify-center items-center flex-col h-[80vh] gap-3">
           <img src="/GoTolkyLogo.png" alt="" className="w-60 sm:w-80 md:w-100" />
           <p className="mt-3 font-bold text-[2em] md:text-[3em]">GoTolky</p>
           <p className="tracking-widest text-[1em] md:text-[1.5em] font-medium bg-gradient-to-r from-gray-600 via-white to-gray-600 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient text-center w-[50%]">O FUTURO DO ATENDIMENTO COMEÇA NO PRIMEIRO</p>
@@ -90,7 +90,7 @@ export default function Home() {
           <p className="w-full md:w-[50%] text-center">
             Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa ferramenta, facilitando a vida no atendimento
           </p>
-          <div className="w-full">
+          <div className="w-full h-100">
             <img src="/MockupIphone.png" alt="" className="h-[300px] md:h-[400px] object-contain mx-auto" />
           </div>
           <div className="relative">
@@ -149,7 +149,7 @@ export default function Home() {
           <p className="w-full md:w-[50%] text-center">
             Com um painel de controle intuitivo, você poderá gerenciar todas as interações e obter insights valiosos sobre o atendimento
           </p>
-          <div className="w-full">
+          <div className="w-full h-100">
             <img src="/mc book desfoque.png" alt="" className="object-contain mx-auto max-w-50 md:max-w-150 md:h-[370px]" />
           </div>
           <div className="relative">
@@ -204,13 +204,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="my-[100px] px-10 flex flex-col justify-center items-center md:mx-50">
+      <div className="my-[100px] px-10 flex flex-col justify-center items-center md:px-auto">
         <h3 className="font-bold text-[1.2em] mb-[2em]">Visão Gerencial</h3>
         <div className="flex flex-col md:flex-row items-center">
           <div className="">
             <img src="/mc book desfoque.png" alt="" className="object-contain mx-auto mb-10 md:max-w-150 md:mr-50" />
           </div>
-          <ul className="flex flex-col gap-5 list-disc list-inside md:w-[50em]">
+          <ul className="flex flex-col gap-5 list-disc list-inside md:w-[30em]">
             <p className="font-bold text-[1.2em]">Dentro da visão gerencial é possível:</p>
             <li>Desabilite a Inteligência Artificial para responder seus clientes manualmente, sempre que necessário.</li>
             <li>Atribua atendimentos a um dos seus atendentes humanos por meio de filas organizadas.</li>
@@ -221,7 +221,7 @@ export default function Home() {
       <div className="bg-[var(--cinza)] flex justify-center flex-col items-center py-[100px]" id="personalizacao">
         <h4 className="font-bold text-[1.5em] mb-20 text-center">Personalização</h4>
         <div className="flex flex-col md:flex-row justify-around items-center">
-          <div className="px-10 md:w-[50em]">
+          <div className="px-10 md:w-[40em]">
             <p className="font-bold">Hisperponalização e a tendência do mercado</p>
             <br />
             <p>A personalização, acompanhando as principais tendências do mercado, é o foco central da nossa ferramenta.</p>
@@ -238,7 +238,7 @@ export default function Home() {
       <div className="flex justify-center flex-col items-center py-[100px]" id="quemsomos">
         <h5 className="font-bold text-[1.5em] mb-5">Quem Somos</h5>
         <img src="/GoTolkyLogo.png" alt="" className="w-[400px]" />
-        <div className="px-10 mt-15 md:w-[100em]">
+        <div className="px-10 mt-15 md:w-[70em]">
           <p>A GoTolky é uma startup criada para revolucionar o atendimento aos seus clientes e colaboradores, utilizando as mais recentes inovações do mercado.</p>
           <br />
           <p>Com o avanço da Inteligência Artificial generativa, trouxemos uma nova abordagem para o atendimento, superando as limitações dos antigos chatbots engessados, que obrigavam o usuário a navegar por menus e opções pouco intuitivas, como:</p>
