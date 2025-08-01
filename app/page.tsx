@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <div className="bg-[url(/fundoOpaco.png)] h-screen bg-cover bg-no-repeat">
-        <div className="fixed w-full py-5 px-4 md:px-15 bg-[#0e0e0e] flex justify-between items-center shadow-md shadow-white/30">
+        <div className="fixed w-full py-5 px-4 md:px-15 bg-[#0e0e0e] flex justify-between items-center shadow-md shadow-white/30 z-20">
           <div>
             <h2 className="font-bold text-[1.5em] text-white">GoTolky</h2>
           </div>
@@ -48,35 +48,47 @@ export default function Home() {
             </button>
 
             <ul
-              className={`absolute top-full right-0 bg-[#0e0e0e] flex-col gap-3 text-[0.9em] p-4 rounded shadow-md z-10 text-white w-40
-                                ${menuAberto ? "flex" : "hidden"} 
-                                md:static md:flex md:flex-row md:gap-5 md:p-0 md:bg-transparent md:shadow-none md:w-full`}
+  className={`absolute top-full right-0 bg-[#0e0e0e] flex-col text-[0.9em] rounded-lg shadow-md z-10 text-white w-40
+              ${menuAberto ? "flex border border-[var(--azul)]" : "hidden"}
+              md:static md:flex md:flex-row md:gap-10 md:p-0 md:shadow-none md:w-full`}
             >
-              <a href="#produto">
-                <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Produto</li>
-              </a>
-              <a href="#personalizacao">
-                <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Personalização</li>
-              </a>
-              <a href="#quemsomos">
-                <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Quem somos</li>
-              </a>
-              <a href="#contato">
-                <li className="hover:text-[#25D366] transition-colors px-2 md:px-0">Contato</li>
-              </a>
-              <a href="/forms">
-                <li className="bg-white text-black px-2 md:w-full rounded-full hover:opacity-80 transition-opacity hover:bg-[#25D366]">
+              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white rounded-t-md md:rounded-none md:active:bg-none px-2 py-2 md:py-0 md:px-0">
+                <a href="#produto" className="hover:text-[var(--azul)] transition md:py-0 md:px-0">
+                  Produto
+                </a>
+              </li>
+
+              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:bg-none px-2 py-2 md:py-0 md:px-0">
+                <a href="#personalizacao" className="hover:text-[var(--azul)] transition-colors md:py-0 md:px-0">
+                  Personalização
+                </a>
+              </li>
+
+              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:bg-none px-2 py-2 md:py-0 md:px-0">
+                <a href="#quemsomos" className="hover:text-[var(--azul)] transition-colors md:py-0 md:px-0">
+                  Quem somos
+                </a>
+              </li>
+
+              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:bg-none px-2 py-2 md:py-0 md:px-0">
+                <a href="#contato" className="hover:text-[var(--azul)] transition-colors md:py-0 md:px-0">
+                  Contato
+                </a>
+              </li>
+
+              <li className="bg-white md:bg-transparent rounded-b-md md:rounded-full px-2 py-2 md:py-0 md:px-0 active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:none">
+                <a href="/forms" className="text-black md:bg-white md:p-1 md:w-full rounded-b-md md:rounded-full hover:opacity-80 md:transition md:ease-in-out md:hover:bg-gradient-to-r md:hover:to-[var(--azulw3)] md:hover:from-[var(--azul)] md:hover:text-white">
                   Assine Já
-                </li>
-              </a>
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
-        <div className="pt-30 flex justify-center items-center flex-col h-[80vh] gap-3">
+        <div className="pt-30 flex justify-center items-center flex-col h-[100vh] md:h-[80vh] gap-3">
           <img src="/GoTolkyLogo.png" alt="" className="w-60 sm:w-80 md:w-100" />
           <p className="mt-3 font-bold text-[2em] md:text-[3em]">GoTolky</p>
-          <p className="tracking-widest text-[1em] md:text-[1.5em] font-medium bg-gradient-to-r from-gray-600 via-white to-gray-600 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient text-center w-[50%]">O FUTURO DO ATENDIMENTO COMEÇA NO PRIMEIRO</p>
-          <p className="tracking-widest text-[1em] md:text-[1.6em] font-bold">OLÁ!</p>
+          <p className="tracking-widest text-[1em] md:text-[1.5em] font-medium bg-gradient-to-r from-gray-600 via-white to-gray-600 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient text-center w-[70%]">O FUTURO DO ATENDIMENTO COMEÇA NO PRIMEIRO</p>
+          <p className="tracking-widest text-[1.5em] md:text-[1.6em] font-bold">OLÁ!</p>
         </div>
       </div>
       <div className="flex justify-center items-center flex-col mt-10" id="produto">
@@ -90,8 +102,8 @@ export default function Home() {
           <p className="w-full md:w-[50%] text-center">
             Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa ferramenta, facilitando a vida no atendimento
           </p>
-          <div className="w-full h-100">
-            <img src="/MockupIphone.png" alt="" className="h-[300px] md:h-[400px] object-contain mx-auto" />
+          <div className="w-full md:h-120 h-80">
+            <img src="/mockupConversaCelular.gif" alt="" className="h-[300px] md:h-[450px] object-contain mx-auto" />
           </div>
           <div className="relative">
             <button
@@ -106,13 +118,13 @@ export default function Home() {
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.2 }}
                 >
                   <div className="flex justify-center">
                     <div
                       className="absolute top-full mt-2 
-                                        w-[90vw] md:w-[800%] 
-                                        bg-[var(--background)] p-5 rounded-b-xl rounded-tr-xl z-10 shadow-md"
+                                        w-[90vw] md:w-[740%] 
+                                        bg-[var(--azulw3)] p-5 rounded-b-xl rounded-tr-xl z-10 shadow-md"
                     >
                       <div className="flex justify-between items-center font-bold mb-3 text-[1.2em]">
                         <p>Detalhes Visão Cliente</p>
@@ -144,13 +156,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex items-center flex-col gap-5 w-full md:w-1/2">
+        <div className="flex items-center align-middle flex-col gap-5 w-full md:w-1/2">
           <p className="font-bold text-center md:text-left">Visão Gerencial</p>
           <p className="w-full md:w-[50%] text-center">
             Com um painel de controle intuitivo, você poderá gerenciar todas as interações e obter insights valiosos sobre o atendimento
           </p>
-          <div className="w-full h-100">
-            <img src="/mc book desfoque.png" alt="" className="object-contain mx-auto max-w-50 md:max-w-150 md:h-[370px]" />
+          <div className="w-full md:h-115 h-35">
+            <img src="/mc book desfoque.png" alt="" className="object-contain mx-auto max-w-50 md:max-w-150 md:h-[420px]" />
           </div>
           <div className="relative">
             <button
@@ -205,7 +217,7 @@ export default function Home() {
       </div>
 
       <div className="my-[100px] px-10 flex flex-col justify-center items-center md:px-auto">
-        <h3 className="font-bold text-[1.2em] mb-[2em]">Visão Gerencial</h3>
+        <h3 className="font-bold text-[1.7em] mb-[1.5em]">Visão Gerencial</h3>
         <div className="flex flex-col md:flex-row items-center">
           <div className="">
             <img src="/mc book desfoque.png" alt="" className="object-contain mx-auto mb-10 md:max-w-150 md:mr-50" />
@@ -237,13 +249,13 @@ export default function Home() {
       </div>
       <div className="flex justify-center flex-col items-center py-[100px]" id="quemsomos">
         <h5 className="font-bold text-[1.5em] mb-5">Quem Somos</h5>
-        <img src="/GoTolkyLogo.png" alt="" className="w-[400px]" />
+        <img src="/GoTolkyLogo.png" alt="" className="md:w-[400px] w-[300px]" />
         <div className="px-10 mt-15 md:w-[70em]">
           <p>A GoTolky é uma startup criada para revolucionar o atendimento aos seus clientes e colaboradores, utilizando as mais recentes inovações do mercado.</p>
           <br />
           <p>Com o avanço da Inteligência Artificial generativa, trouxemos uma nova abordagem para o atendimento, superando as limitações dos antigos chatbots engessados, que obrigavam o usuário a navegar por menus e opções pouco intuitivas, como:</p>
           <br />
-          <p className="md:ml-[5em]"><i>“Aperte 1 para falar com o financeiro, aperte 2 para falar com o comercial...”</i></p>
+          <p className="md:ml-[5em]"><i className="text-lg">“Aperte 1 para falar com o financeiro, aperte 2 para falar com o comercial...”</i></p>
           <br />
           <p>Na GoTolky, acreditamos que o atendimento deve ser natural, ágil e eficiente. Por isso, desenvolvemos uma solução capaz de compreender o que o usuário realmente quer, sem a necessidade de palavras-chave ou etapas cansativas. Basta que ele diga o que precisa e a IA já direciona e resolve de forma rápida e personalizada.</p>
           <br />
