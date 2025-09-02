@@ -1,10 +1,12 @@
-"use client"
+"use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { IoIosArrowDown } from "react-icons/io";
+import Header from "./components/Header/Header";
 
 export default function Home() {
-
   const [detalhesVisaoCliente, setDetalhesVisaoCliente] = useState(false);
   const [detalhesVisaoGerencial, setDetalhesVisaoGerencial] = useState(false);
   const [menuAberto, setMenuAberto] = useState(false);
@@ -20,265 +22,302 @@ export default function Home() {
   }
 
   return (
-    <>
-      <div className="bg-[url(/fundoOpaco.png)] h-screen bg-cover bg-no-repeat">
-        <div className="fixed w-full py-5 px-4 md:px-15 bg-[#0e0e0e] flex justify-between items-center shadow-md shadow-white/30 z-20">
-          <div>
-            <h2 className="font-bold text-[1.5em] text-white">GoTolky</h2>
+    <AnimatePresence>
+      <div className="min-h-screen min-w-screen p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
+        <div className="flex w-full justify-center">
+          <Header />
+        </div>
+
+        {/* Title Mobile */}
+        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3.5 lg:hidden">
+          <h1 className="font-semibold tracking-widest text-[1.7em]">CRM</h1>
+          <h1 className="font-semibold tracking-widest text-[1.7em]">+</h1>
+          <h1 className="font-semibold tracking-widest text-[1.7em]">
+            ARITIFICIAL INTELLIGENCE
+          </h1>
+          <h1 className="font-semibold text-[1.7em]">+</h1>
+          <h1 className="font-semibold text-[1.7em]">WHATSAPP</h1>
+        </div>
+        {/* Title Tablet */}
+        <div className="items-center justify-center text-center mt-10 mx-15 bg-[#6C6C6C]/40 border border-[#777777] py-10 hidden lg:flex">
+          <div className="bg-[#DDDFE2]/50 rounded-lg py-10 px-12">
+            <h1 className="text-3xl">
+              <span className="font-bold">CRM</span> integrado com{" "}
+              <span className="font-bold">INTELIGÊNCIA ARTIFICIAL</span>
+              <br /> conectado ao seu{" "}
+              <span className="font-bold">WHATSAPP</span>
+            </h1>
           </div>
-          <nav className="relative">
-            <button
-              onClick={() => setMenuAberto(!menuAberto)}
-              className="md:hidden"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-white"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16m-7 6h7"
-                />
-              </svg>
-            </button>
-
-            <ul
-  className={`absolute top-full right-0 bg-[#0e0e0e] flex-col text-[0.9em] rounded-lg shadow-md z-10 text-white w-40
-              ${menuAberto ? "flex border border-[var(--azul)]" : "hidden"}
-              md:static md:flex md:flex-row md:gap-10 md:p-0 md:shadow-none md:w-full`}
-            >
-              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white rounded-t-md md:rounded-none md:active:bg-none px-2 py-2 md:py-0 md:px-0">
-                <a href="#produto" className="hover:text-[var(--azul)] transition md:py-0 md:px-0">
-                  Produto
-                </a>
-              </li>
-
-              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:bg-none px-2 py-2 md:py-0 md:px-0">
-                <a href="#personalizacao" className="hover:text-[var(--azul)] transition-colors md:py-0 md:px-0">
-                  Personalização
-                </a>
-              </li>
-
-              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:bg-none px-2 py-2 md:py-0 md:px-0">
-                <a href="#quemsomos" className="hover:text-[var(--azul)] transition-colors md:py-0 md:px-0">
-                  Quem somos
-                </a>
-              </li>
-
-              <li className="active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:bg-none px-2 py-2 md:py-0 md:px-0">
-                <a href="#contato" className="hover:text-[var(--azul)] transition-colors md:py-0 md:px-0">
-                  Contato
-                </a>
-              </li>
-
-              <li className="bg-white md:bg-transparent rounded-b-md md:rounded-full px-2 py-2 md:py-0 md:px-0 active:bg-gradient-to-r active:to-[var(--azulw3)] active:from-[var(--azul)] active:text-white md:active:none">
-                <a href="/forms" className="text-black md:bg-white md:p-1 md:w-full rounded-b-md md:rounded-full hover:opacity-80 md:transition md:ease-in-out md:hover:bg-gradient-to-r md:hover:to-[var(--azulw3)] md:hover:from-[var(--azul)] md:hover:text-white">
-                  Assine Já
-                </a>
-              </li>
-            </ul>
-          </nav>
         </div>
-        <div className="pt-30 flex justify-center items-center flex-col h-[100vh] md:h-[80vh] gap-3">
-          <img src="/GoTolkyLogo.png" alt="" className="w-60 sm:w-80 md:w-100" />
-          <p className="mt-3 font-bold text-[2em] md:text-[3em]">GoTolky</p>
-          <p className="tracking-widest text-[1em] md:text-[1.5em] font-medium bg-gradient-to-r from-gray-600 via-white to-gray-600 bg-[length:200%_200%] bg-clip-text text-transparent animate-gradient text-center w-[70%]">O FUTURO DO ATENDIMENTO COMEÇA NO PRIMEIRO</p>
-          <p className="tracking-widest text-[1.5em] md:text-[1.6em] font-bold">OLÁ!</p>
+        {/* Card Mobile */}
+        <div className="mt-10 justify-center flex lg:hidden">
+          <div className="rounded-lg flex items-center justify-center gap-3">
+            <div className="w-25 h-25 pointer-events-none select-none bg-[#484848]/40 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg py-4 px-2 flex items-center justify-center">
+              <img src="/GoTolkyLogo.png" alt="GoTolky Logo" className="w-20" />
+            </div>
+            <div className="w-25 h-25 pointer-events-none select-none bg-[#484848]/40 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg py-4 px-2 flex items-center justify-center">
+              <img src="/ai-vector.png" alt="GoTolky Logo" className="w-20" />
+            </div>
+            <div className="w-25 h-25 pointer-events-none select-none bg-[#484848]/40 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg py-4 px-2 flex items-center justify-center">
+              <img src="/WhatsApp.png" alt="GoTolky Logo" className="w-20" />
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="flex justify-center items-center flex-col mt-10" id="produto">
-        <p className="font-bold text-[1.5em] mb-5">Produto</p>
-        <p className="w-[80%] text-center">Imaginou personalizar uma IA para trabalhar como uma assistente ou até uma vendedora dos seus produtos?</p>
-        <p className="text-[1.2em] font-bold mt-2 text-center w-[80%]">Para essa pergunta a GoTolky possui a ferramenta perfeita!</p>
-      </div>
-      <div className="bg-[var(--cinza)] flex flex-col md:flex-row justify-around py-10 md:py-15 mt-10 gap-10 px-4">
-        <div className="flex items-center flex-col gap-5 w-full md:w-1/2">
-          <p className="font-bold text-center md:text-left">Visão do Cliente</p>
-          <p className="w-full md:w-[50%] text-center">
-            Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa ferramenta, facilitando a vida no atendimento
+        {/* Card Tablet */}
+        <div className="mt-10 justify-center gap-4 hidden lg:flex">
+          <div className="flex items-center justify-center w-70 h-30 pointer-events-none select-none bg-[#747474]/40 backdrop-blur-lg border border[#7E7E7E] rounded-xl shadow-lg py-4 px-2">
+            <Image
+              src="/GoTolkyLogo.png"
+              width={150}
+              height={0}
+              alt="GoTolky Logo"
+            />
+          </div>
+          <div className="flex items-center justify-center w-70 h-30 pointer-events-none select-none bg-[#747474]/40 backdrop-blur-lg border border[#7E7E7E] rounded-xl shadow-lg py-4 px-2">
+            <Image
+              src="/ai-vector.png"
+              width={100}
+              height={0}
+              alt="GoTolky Logo"
+            />
+          </div>
+          <div className="flex items-center justify-center w-70 h-30 pointer-events-none select-none bg-[#747474]/40 backdrop-blur-lg border border[#7E7E7E] rounded-xl shadow-lg py-4 px-2">
+            <Image
+              src="/WhatsApp.png"
+              width={100}
+              height={0}
+              alt="GoTolky Logo"
+            />
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center text-center mt-10 mx-2">
+          <p className="text-md font-light w-[70%] tracking-widest">
+            <span className="font-medium">Hoje</span> a sua empresa pode ter uma
+            IA do seu jeito!
           </p>
-          <div className="w-full md:h-120 h-80">
-            <img src="/mockupConversaCelular.gif" alt="" className="h-[300px] md:h-[450px] object-contain mx-auto" />
-          </div>
-          <div className="relative">
-            <button
-              onClick={toggleDetalhesVisaoCliente}
-              className="bg-[var(--background)] py-2 px-4 rounded cursor-pointer hover:bg-[var(--cinza2)] transition-colors duration-200"
-            >
-              Detalhes
-            </button>
-            <AnimatePresence>
-              {detalhesVisaoCliente && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <div className="flex justify-center">
-                    <div
-                      className="absolute top-full mt-2 
-                                        w-[90vw] md:w-[740%] 
-                                        bg-[var(--azulw3)] p-5 rounded-b-xl rounded-tr-xl z-10 shadow-md"
-                    >
-                      <div className="flex justify-between items-center font-bold mb-3 text-[1.2em]">
-                        <p>Detalhes Visão Cliente</p>
-                        <button
-                          className="cursor-pointer"
-                          onClick={toggleDetalhesVisaoCliente}
-                        >
-                          X
-                        </button>
-                      </div>
-                      <div className="text-sm">
-                        <p>
-                          Nesta visão, o seu cliente visualizará todas as mensagens como parte de um atendimento convencional, sem a necessidade de utilizar outro aplicativo ou sistema para se comunicar com a sua equipe.
-                        </p>
-                        <br />
-                        <p>
-                          O atendimento é fluido e contextual, dispensando o uso de palavras-chave para que a ferramenta entenda o assunto tratado. Ela é capaz de compreender as mensagens de forma natural, como faria um atendente humano.
-                        </p>
-                        <br />
-                        <p>
-                          Além disso, seu cliente será notificado quando um atendente humano assumir a conversa, garantindo transparência e continuidade no atendimento.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
+          <IoIosArrowDown className="text-4xl text-[#484848]" />
         </div>
-
-        <div className="flex items-center align-middle flex-col gap-5 w-full md:w-1/2">
-          <p className="font-bold text-center md:text-left">Visão Gerencial</p>
-          <p className="w-full md:w-[50%] text-center">
-            Com um painel de controle intuitivo, você poderá gerenciar todas as interações e obter insights valiosos sobre o atendimento
-          </p>
-          <div className="w-full md:h-115 h-35">
-            <img src="/mc book desfoque.png" alt="" className="object-contain mx-auto max-w-50 md:max-w-150 md:h-[420px]" />
-          </div>
-          <div className="relative">
-            <button
-              onClick={toggleDetalhesVisaoGerencial}
-              className="bg-[var(--background)] py-2 px-4 rounded cursor-pointer hover:bg-[var(--cinza2)] transition-colors duration-200"
-            >
-              Detalhes
-            </button>
-            <AnimatePresence>
-              {detalhesVisaoGerencial && (
-                <motion.div
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <div className="flex justify-center">
-                    <div
-                      className="absolute top-full mt-2
-                                        w-[90vw] md:w-[800px]
-                                        bg-[var(--branco)] p-5 rounded-b-xl rounded-tl-xl z-10 shadow-md text-black"
-                    >
-                      <div className="flex justify-between items-center font-bold mb-3 text-[1.2em]">
-                        <p>Detalhes Visão Gerencial</p>
-                        <button
-                          className="cursor-pointer"
-                          onClick={toggleDetalhesVisaoGerencial}
-                        >
-                          X
-                        </button>
-                      </div>
-                      <div className="text-sm">
-                        <p>
-                          Já nesta visualização, você acompanha em tempo real todos os atendimentos realizados pela IA, podendo intervir a qualquer momento para assumir a conversa com o cliente, caso julgue necessário.
-                        </p>
-                        <br />
-                        <p>
-                          É possível também atribuir o atendimento a um atendente específico da sua equipe, facilitando a gestão e o acompanhamento interno dos atendimentos.
-                        </p>
-                        <br />
-                        <p>
-                          Cada equipe conta com um número de atendimento próprio, permitindo a personalização e organização de cada interação com os clientes.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-        </div>
-      </div>
-
-      <div className="my-[100px] px-10 flex flex-col justify-center items-center md:px-auto">
-        <h3 className="font-bold text-[1.7em] mb-[1.5em]">Visão Gerencial</h3>
-        <div className="flex flex-col md:flex-row items-center">
-          <div className="">
-            <img src="/mc book desfoque.png" alt="" className="object-contain mx-auto mb-10 md:max-w-150 md:mr-50" />
-          </div>
-          <ul className="flex flex-col gap-5 list-disc list-inside md:w-[30em]">
-            <p className="font-bold text-[1.2em]">Dentro da visão gerencial é possível:</p>
-            <li>Desabilite a Inteligência Artificial para responder seus clientes manualmente, sempre que necessário.</li>
-            <li>Atribua atendimentos a um dos seus atendentes humanos por meio de filas organizadas.</li>
-            <li>Visualize resumos personalizados das conversas, sem precisar ler todas as mensagens para compreender totalmente o atendimento.</li>
+        <div
+          id="produto"
+          className="flex flex-col items-center justify-center text-center mt-10 mx-3"
+        >
+          <ul className="text-center gap-2">
+            <li className="bg-[#7E7E7E]/50 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg p-4 mb-4 gap-2">
+              <h2 className="text-lg font-medium">O Tempo Importa</h2>
+              <p className="font-light">
+                Você sabia que o interesse do cliente despenca após apenas{" "}
+                <span className="font-semibold">5 minutos</span> resposta?
+                Chatbots engessados, que não entendem o contexto, contribuem
+                para perdas significativas.
+              </p>
+            </li>
+            <li className="bg-[#7E7E7E]/50 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg p-4 mb-4 gap-2">
+              <h2 className="text-lg font-medium">A Conexão Importa</h2>
+              <p>
+                Nossa solução NÃO deixa o cliente falando sozinho, além de
+                interagir de forma natural e empática, transmitindo confiança e
+                proximidade.
+              </p>
+            </li>
+            <li className="bg-[#7E7E7E]/50 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg p-4 mb-4 gap-2">
+              <h2 className="text-lg font-medium">O Simples Importa</h2>
+              <p>
+                Além disso, você conta com um CRM conectado diretamente ao
+                WhatsApp, centralizando toda a comunicação em um só lugar. Para
+                completar, tem à disposição uma assistente virtual do seu jeito!
+              </p>
+            </li>
           </ul>
         </div>
-      </div>
-      <div className="bg-[var(--cinza)] flex justify-center flex-col items-center py-[100px]" id="personalizacao">
-        <h4 className="font-bold text-[1.5em] mb-20 text-center">Personalização</h4>
-        <div className="flex flex-col md:flex-row justify-around items-center">
-          <div className="px-10 md:w-[40em]">
-            <p className="font-bold">Hisperponalização e a tendência do mercado</p>
-            <br />
-            <p>A personalização, acompanhando as principais tendências do mercado, é o foco central da nossa ferramenta.</p>
-            <br />
-            <p>Aqui no GoTolky, você personaliza seu atendimento de forma rápida e intuitiva. Criamos esta solução justamente para facilitar a vida de quem utiliza chatbots e deseja moldar o atendimento ao seu próprio estilo e necessidade.</p>
-            <br />
-            <p>Com apenas um breve texto e manuais de atendimento, sua Inteligência Artificial já começa a atender seus clientes ou colaboradores de maneira eficiente e personalizada.</p>
+        <div
+          id="missao"
+          className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-5 mb-10"
+        >
+          <div className="flex flex-col gap-5 tracking-[13%]">
+            <h2 className="text-4xl unico">SER ÚNICO</h2>
+            <h2 className="text-4xl e">É</h2>
+            <h2 className="text-4xl ">SER DIFERENTE</h2>
           </div>
-          <div className="">
-            <img src="/personalização.png" alt="" className="w-150" />
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center flex-col items-center py-[100px]" id="quemsomos">
-        <h5 className="font-bold text-[1.5em] mb-5">Quem Somos</h5>
-        <img src="/GoTolkyLogo.png" alt="" className="md:w-[400px] w-[300px]" />
-        <div className="px-10 mt-15 md:w-[70em]">
-          <p>A GoTolky é uma startup criada para revolucionar o atendimento aos seus clientes e colaboradores, utilizando as mais recentes inovações do mercado.</p>
-          <br />
-          <p>Com o avanço da Inteligência Artificial generativa, trouxemos uma nova abordagem para o atendimento, superando as limitações dos antigos chatbots engessados, que obrigavam o usuário a navegar por menus e opções pouco intuitivas, como:</p>
-          <br />
-          <p className="md:ml-[5em]"><i className="text-lg">“Aperte 1 para falar com o financeiro, aperte 2 para falar com o comercial...”</i></p>
-          <br />
-          <p>Na GoTolky, acreditamos que o atendimento deve ser natural, ágil e eficiente. Por isso, desenvolvemos uma solução capaz de compreender o que o usuário realmente quer, sem a necessidade de palavras-chave ou etapas cansativas. Basta que ele diga o que precisa e a IA já direciona e resolve de forma rápida e personalizada.</p>
-          <br />
-          <p>Foi com essa missão — facilitar e melhorar a experiência de atendimento — que a GoTolky nasceu: para tornar o relacionamento com seus clientes e funcionários mais humano, prático e inteligente.</p>
-        </div>
-      </div>
-      <div className="bg-[var(--branco)] text-[var(--background)] py-[25px] flex flex-col md:justify-center" id="contato">
-        <div className="flex flex-col md:flex-row md:justify-around">
-          <div className="text-left flex gap-1 mb-3 flex-col px-10">
-            <h6 className="font-bold">Contato</h6>
-            <p>contato@GoTolky.com.br</p>
-            <p>+55 11 98823-3222</p>
-            <p>www.GoTolky.com.br</p>
-          </div>
-          <div className="flex flex-col gap-1 px-10">
-            <p className="font-bold">Endereço</p>
-            <p>Rua da Consolação, 368 - São Paulo - SP</p>
+          <div className="flex flex-col gap-4">
+            <p>
+              O melhor desempenho acontece quando sua empresa transmite valor em
+              cada <span className="font-bold italic">mensagem</span> e{" "}
+              <span className="font-bold italic">áudio</span>.
+            </p>
+            <p>
+              Com uma IA que reflete seus{" "}
+              <span className="font-bold italic">valores</span> e{" "}
+              <span className="font-bold italic">cultura</span>, cada interação
+              mostra quem você realmente é!
+            </p>
+            <p>
+              Mais do que responder rápido, ela cria conexões reais, tornando
+              cada interação única, humana e memorável
+            </p>
           </div>
         </div>
-        <footer className="text-center text-gray-500 text-[0.5em] mt-10 md:text-[0.8em]">
-          &copy; {new Date().getFullYear()} GoTolky. Todos os direitos reservados.
+        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3 mb-10">
+          <div className="my-8">
+            <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
+            <p>Veja a seguir um exemplo das visõse de cada um:</p>
+          </div>
+          <div className="flex flex-col justify-center items-center">
+            <h3 className="text-2xl font-bold">Visão do Cliente</h3>
+            <p>
+              Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa
+              ferramenta, facilitando a vida no atendimento
+            </p>
+            <Image
+              src="/mockupConversaCelular.gif"
+              width={220}
+              height={220}
+              alt="Mockup do Iphone em .gif"
+              className="mt-10"
+            />
+            <button
+              className="bg-[#1F1F1F] rounded-xl shadow-lg py-2 px-8 mt-8 cursor-pointer"
+              onClick={toggleDetalhesVisaoCliente}
+            >
+              Detalhes
+            </button>
+            {detalhesVisaoCliente && (
+              <div className="flex flex-col gap-4 z-20 bg-[#008CFF]/40 rounded-lg p-4 justify-start items-center mt-2 border border-white">
+                <h3 className="font-bold text-lg">Detalhes Visão Cliente</h3>
+                <p>
+                  Nesta visão, o seu cliente visualizará todas as mensagens como
+                  parte de um atendimento convencional, sem a necessidade de
+                  utilizar outro aplicativo ou sistema para se comunicar com a
+                  sua equipe.
+                </p>
+                <p>
+                  O atendimento é fluido e contextual, dispensando o uso de
+                  palavras-chave para que a ferramenta entenda o assunto
+                  tratado. Ela é capaz de compreender as mensagens de forma
+                  natural, como faria um atendente humano.
+                </p>
+                <p>
+                  Além disso, seu cliente será notificado quando um atendente
+                  humano assumir a conversa, garantindo transparência e
+                  continuidade no atendimento.
+                </p>
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col justify-center items-center mt-10">
+            <h3 className="text-2xl font-bold mt-10">Visão do Gerente</h3>
+            <p>
+              Com um CRM integrado ao Whatsapp, você terá controle total sobre
+              os atendimentos, podendo acompanhar e analisar cada interação.
+            </p>
+            <Image
+              src="/mockupLaptop.png"
+              width={420}
+              height={420}
+              alt="Mockup do PC em foto"
+              className="mt-10"
+            />
+            <button
+              className="bg-[#1F1F1F] rounded-xl shadow-lg py-2 px-8 mt-8"
+              onClick={toggleDetalhesVisaoGerencial}
+            >
+              Detalhes
+            </button>
+            {detalhesVisaoGerencial && (
+              <div className="flex flex-col gap-4 z-20 bg-[#008CFF]/40 rounded-lg p-4 justify-start items-center mt-2 border border-white">
+                <h3 className="font-bold text-lg">Detalhes Visão Gerencial</h3>
+                <p>
+                  Já nesta visualização, você acompanha em tempo real todos os
+                  atendimentos realizados pela IA, podendo intervir a qualquer
+                  momento para assumir a conversa com o cliente, caso julgue
+                  necessário.
+                </p>
+                <p>
+                  É possível também atribuir o atendimento a um atendente
+                  específico da sua equipe, facilitando a gestão e o
+                  acompanhamento interno dos atendimentos.
+                </p>
+                <p>
+                  Cada equipe conta com um número de atendimento próprio,
+                  permitindo a personalização e organização de cada interação
+                  com os clientes.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+        <div
+          id="quemsomos"
+          className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3 mb-10"
+        >
+          <h3 className="font-bold text-4xl">QUEM SOMOS</h3>
+          <div className="flex flex-col gap-4  mt-4 bg-[#008CFF]/40 backdrop-blur-lg border border-white rounded-xl shadow-lg p-6">
+            <p className="text-lg">
+              A GoTolky nasceu para{" "}
+              <span className="font-bold">revolucionar</span> a forma como
+              empresas se conectam com{" "}
+              <span className="font-bold">clientes</span> e{" "}
+              <span className="font-bold">colaboradores</span>, unindo{" "}
+              <span className="italic">
+                inovação, empatia e tecnologia de ponta
+              </span>
+              .
+            </p>
+            <p className="text-lg">
+              Com o avanço da Inteligência Artificial generativa, desenvolvemos
+              uma nova abordagem para o atendimento mais natural, humano e
+              eficiente.
+            </p>
+            <p className="text-lg">
+              Superamos as limitações dos antigos chatbots engessados para
+              oferecer conversas fluidas, personalizadas e realmente úteis.
+            </p>
+            <p className="text-lg">
+              Na GoTolky, acreditamos que o atendimento deve ser natural, ágil e
+              eficiente. Por isso, desenvolvemos uma solução capaz de
+              compreender o que o usuário realmente quer, sem a necessidade de
+              palavras-chave ou etapas cansativas. Basta que ele diga o que
+              precisa e a IA já direciona e resolve de forma rápida e
+              personalizada.
+            </p>
+            <p className="text-lg">
+              Foi com essa missão, de facilitar e melhorar a experiência do
+              atendimento, que a GoTolky nasceu: para tornar o relacionamento
+              com seus clientes e funcionários mais humano, prático e
+              inteligente.
+            </p>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 mb-10 bg-linear-to-br from-[#0044AA] to-[#11AAFF] border border-[#336699] rounded-xl shadow-2xl px-4 py-4">
+          <iframe
+            src="https://www.youtube.com/embed/MO9O68kVaFs"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            className="w-full rounded-lg"
+          ></iframe>
+        </div>
+        <footer className="flex flex-col bg-[#3A3A3A] px-4 pt-4 gap-6">
+          <ul className="flex flex-col text-start gap-1">
+            <p className="text-2xl font-bold mb-2">Contato</p>
+            <li>contato@GoTolky.com.br</li>
+            <li>+55 1198823-3222</li>
+            <li>www.gotolky.com.br</li>
+          </ul>
+          <ul className="flex flex-col text-start gap-1">
+            <p className="text-2xl font-bold mb-2">Endereço</p>
+            <li>Rua da Consolação, 368 - São Paulo, SP</li>
+          </ul>
+          <p className="text-center text-gray-500 text-[0.5em] md:text-[0.8em] p-2">
+            &copy; {new Date().getFullYear()} GoTolky. Todos os direitos
+            reservados.
+          </p>
         </footer>
       </div>
-    </>
+    </AnimatePresence>
   );
 }
+
+//<footer className="text-center text-gray-500 text-[0.5em] mt-10 md:text-[0.8em]">
+//  &copy; {new Date().getFullYear()} GoTolky. Todos os direitos reservados.
+//</footer>

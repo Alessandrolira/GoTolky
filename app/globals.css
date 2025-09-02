@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #222222;
-  --background2: #1b1b1b;
+  --bgCard: #7c7c7c;
+  --border: #7E7E7E;
   --cinza: #373737;
   --cinza2: #424242;
   --cinzaClick: #646060;
@@ -14,13 +14,165 @@
   --azulClaro: #6C8BCF;
   --amarelo: #F2B705;
   --vermelho: #EB155B;
+
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 100 800;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Padyakke Expanded One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/padyakkeexpandedone/v7/K2FvfY9El_tbR0JfHb6WWvrBaU6XAUvC4IAoP65l.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ===== Normal ===== */
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaThin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaLight.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaMedium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaSemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaBlack.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ===== Italic ===== */
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaThinItalic.ttf") format("truetype");
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaExtraLightItalic.ttf") format("truetype");
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaLightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaItalic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaMediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaSemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaBoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Lufga";
+  src: url("./fonts/LufgaBlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
 }
 
 body {
-  background: var(--background);
-  color: var(--branco);
-  font-family: "Montserrat", sans-serif;
+  font-family: "Lufga", sans-serif;
   font-size: 16px;
+  color: #e0e0e0
+}
+
+.unico {
+  font-family: "JetBrains Mono", sans-serif;
+}
+
+.e {
+  font-family: "Padyakke Expanded One", sans-serif;
 }
 
 ::-webkit-scrollbar {
@@ -37,80 +189,6 @@ body {
   border-radius: 10px;
 }
 
-/* From Uiverse.io by mrhyddenn
-/* The switch - the box around the slider */
-.switch {
-  font-size: 12px;
-  position: relative;
-  display: inline-block;
-  width: 43px;
-  height: 24px;
-}
-
-/* Hide default HTML checkbox */
-.switch input {
-  opacity: 1;
-  width: 0;
-  height: 0;
-}
-
-/* The slider */
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0px;
-  background: #fff;
-  transition: .6s;
-  border-radius: 30px;
-  border: 1px solid #ccc;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 1.9em;
-  width: 1.9em;
-  border-radius: 16px;
-  left: 1.2px;
-  top: 0;
-  bottom: 0;
-  background-color: white;
-  box-shadow: 0 2px 5px #999999;
-  transition: .4s;
-}
-
-input:checked+.slider {
-  background-color: #5fdd54;
-  border: 1px solid transparent;
-}
-
-input:checked+.slider:before {
-  transform: translateX(1.5em);
-}
-
-::-webkit-search-decoration {
-  display: none;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradientShift 3s ease infinite;
-}
-
-html {
-  scroll-behavior: smooth;
+.header {
+  clip-path: polygon(0% 0, 100% 0, 98% 100%, 2% 100%);
 }
