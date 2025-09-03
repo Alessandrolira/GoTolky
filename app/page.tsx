@@ -70,7 +70,7 @@ export default function Home() {
           </div>
           <div className="flex gap-3 flex-wrap w-[40%]">
             <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80">
-              <img src="/GotolkyLogo.png" alt="GoTolky Logo" className="w-50" />
+              <img src="/GoTolkyLogo.png" alt="GoTolky Logo" className="w-50" />
             </div>
             <div className="bg-[#484848]/40 backdrop-blur-lg w-50 h-60 rounded-lg"></div>
             <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80">
