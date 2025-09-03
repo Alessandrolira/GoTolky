@@ -7,7 +7,7 @@ const cardsInfo = [
     image: "/mulher-triste.png",
     title: "O Tempo Importa",
     texto: (
-      <p>
+      <p className="text-xl">
         Você sabia que o interesse do cliente despenca após apenas{" "}
         <span className="font-bold">5 minutos</span> resposta? Chatbots
         engessados, que não entendem o contexto, contribuem para perdas
@@ -20,7 +20,7 @@ const cardsInfo = [
     image: "/humano-ia-contato.png",
     title: "A Conexão Importa",
     texto: (
-      <p>
+      <p className="text-xl">
         Nossa solução <span className="font-bold">NÃO</span> deixa o cliente
         falando sozinho, além de interagir de forma natural e empática,
         transmitindo confiança e proximidade.
@@ -32,7 +32,7 @@ const cardsInfo = [
     image: "/notebook-aberto.png",
     title: "O Simples Importa",
     texto: (
-      <p>
+      <p className="text-xl">
         Além disso, você conta com um <span className="font-bold">CRM</span>{" "}
         conectado diretamente ao <span className="font-bold">WhatsApp</span>,
         centralizando toda a comunicação em um só lugar. Para completar, tem à
@@ -59,7 +59,7 @@ export default function Slider() {
             <div className="bg-[#6C6C6C]/40 backdrop-blur-lg mx-6 p-6 rounded-xl border border-[#777777] h-80 justify-center items-center flex">
               <div className="bg-[#DDDFE2]/40 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-8 h-65">
                 <h3 className="font-bold text-2xl">{item.title}</h3>
-                <p className="text-xl">{item.texto}</p>
+                {item.texto}
               </div>
             </div>
             <img src={item.image} />
