@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import Header from "./components/Header/Header";
@@ -27,7 +27,6 @@ export default function Home() {
         <div className="flex w-full justify-center">
           <Header />
         </div>
-
         {/* Title Mobile */}
         <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3.5 lg:hidden">
           <h1 className="font-semibold tracking-widest text-[1.7em]">CRM</h1>
@@ -39,7 +38,7 @@ export default function Home() {
           <h1 className="font-semibold text-[1.7em]">WHATSAPP</h1>
         </div>
         {/* Title Tablet */}
-        <div className="items-center justify-center text-center mt-10 mx-15 bg-[#6C6C6C]/40 border border-[#777777] py-10 hidden lg:flex">
+        <div className="items-center justify-center text-center mt-10 mx-15 bg-[#6C6C6C]/40 border border-[#777777] py-10 hidden lg:flex xl:hidden">
           <div className="bg-[#DDDFE2]/50 rounded-lg py-10 px-12">
             <h1 className="text-3xl">
               <span className="font-bold">CRM</span> integrado com{" "}
@@ -49,6 +48,7 @@ export default function Home() {
             </h1>
           </div>
         </div>
+        {/* Title Desktop */}
         {/* Card Mobile */}
         <div className="mt-10 justify-center flex lg:hidden">
           <div className="rounded-lg flex items-center justify-center gap-3">
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center text-center mt-10 mx-2">
-          <p className="text-md font-light w-[70%] tracking-widest">
+          <p className="text-md font-light w-[70%] lg:w-[30%] tracking-widest">
             <span className="font-medium">Hoje</span> a sua empresa pode ter uma
             IA do seu jeito!
           </p>
@@ -101,7 +101,7 @@ export default function Home() {
           id="produto"
           className="flex flex-col items-center justify-center text-center mt-10 mx-3"
         >
-          <ul className="text-center gap-2">
+          <ul className="text-center gap-2 lg:hidden">
             <li className="bg-[#7E7E7E]/50 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg p-4 mb-4 gap-2">
               <h2 className="text-lg font-medium">O Tempo Importa</h2>
               <p className="font-light">
@@ -128,6 +128,50 @@ export default function Home() {
               </p>
             </li>
           </ul>
+          {/* Cards Produto Tablet */}
+          <div className="justify-between items-center mx-30 w-[80%] hidden lg:flex">
+            <div className="items-center justify-center text-center bg-[#6C6C6C]/40 border border-[#777777] p-4 hidden w-[70%] h-55 lg:flex">
+              <div className="bg-[#DDDFE2]/50 rounded-lg p-4 flex flex-col gap-3 h-45 ">
+                <h2 className="text-lg font-medium">O Tempo Importa</h2>
+                <p className="font-light text-lg">
+                  Você sabia que o interesse do cliente despenca após apenas{" "}
+                  <span className="font-semibold">5 minutos</span> resposta?
+                  Chatbots engessados, que não entendem o contexto, contribuem
+                  para perdas significativas.
+                </p>
+              </div>
+            </div>
+            <img src="/mulher-triste.png" className="h-55" />
+          </div>
+          <div className="justify-between items-center mx-30 mt-5 w-[80%] hidden lg:flex">
+            <img src="/humano-ia-contato.png" className="h-55" />
+            <div className="items-center justify-center text-center bg-[#6C6C6C]/40 border border-[#777777] p-4 hidden w-[70%] h-55 lg:flex">
+              <div className="bg-[#DDDFE2]/50 rounded-lg p-4 flex flex-col gap-3 h-45">
+                <h2 className="text-lg font-medium">A Conexão Importa</h2>
+                <p className="font-light text-lg">
+                  Nossa solução <span className="font-semibold">NÃO</span> deixa
+                  o cliente falando sozinho, além de interagir de forma natural
+                  e empática, transmitindo confiança e proximidade.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="justify-between items-center mx-30 mt-5 w-[80%] hidden lg:flex">
+            <div className="items-center justify-center text-center bg-[#6C6C6C]/40 border border-[#777777] p-4 hidden w-[70%] h-55 lg:flex">
+              <div className="bg-[#DDDFE2]/50 rounded-lg p-4 flex flex-col gap-3 h-45">
+                <h2 className="text-lg font-medium">O Simples Importa</h2>
+                <p className="font-light text-lg">
+                  Além disso, você conta com um{" "}
+                  <span className="font-bold">CRM</span> conectado diretamente
+                  ao
+                  <span className="font-bold">WhatsApp</span>, centralizando
+                  toda a comunicação em um só lugar. Para completar, tem à
+                  disposição uma assistente virtual do seu jeito!
+                </p>
+              </div>
+            </div>
+            <img src="/notebook-aberto.png" className="h-55" />
+          </div>
         </div>
         <div
           id="missao"
@@ -161,7 +205,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
             <p>Veja a seguir um exemplo das visõse de cada um:</p>
           </div>
-          <div className="flex flex-col justify-center items-center">
+          <div className="flex flex-col justify-center items-center relative mx-2 lg:mx10">
             <h3 className="text-2xl font-bold">Visão do Cliente</h3>
             <p>
               Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa
@@ -181,8 +225,16 @@ export default function Home() {
               Detalhes
             </button>
             {detalhesVisaoCliente && (
-              <div className="flex flex-col gap-4 z-20 bg-[#008CFF]/40 rounded-lg p-4 justify-start items-center mt-2 border border-white">
-                <h3 className="font-bold text-lg">Detalhes Visão Cliente</h3>
+              <motion.div
+                className="flex flex-col gap-4 bg-[#2A4DA7]/80 backdrop-blur-xl 
+                     rounded-lg p-3 justify-start items-center mt-2 mx-2 
+                     border border-white absolute z-20 lg:mx-10 lg:w-[60%]"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ ease: "easeInOut" }}
+              >
+                <h3 className="font-bold">Detalhes Visão Cliente</h3>
                 <p>
                   Nesta visão, o seu cliente visualizará todas as mensagens como
                   parte de um atendimento convencional, sem a necessidade de
@@ -200,10 +252,17 @@ export default function Home() {
                   humano assumir a conversa, garantindo transparência e
                   continuidade no atendimento.
                 </p>
-              </div>
+                <motion.button
+                  className="px-4 py-2 bg-red-700 rounded-lg cursor-pointer"
+                  onClick={toggleDetalhesVisaoCliente}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Fechar
+                </motion.button>
+              </motion.div>
             )}
           </div>
-          <div className="flex flex-col justify-center items-center mt-10">
+          <div className="flex flex-col justify-center items-center relative mt-10 mx-2 lg:mx-10">
             <h3 className="text-2xl font-bold mt-10">Visão do Gerente</h3>
             <p>
               Com um CRM integrado ao Whatsapp, você terá controle total sobre
@@ -223,7 +282,14 @@ export default function Home() {
               Detalhes
             </button>
             {detalhesVisaoGerencial && (
-              <div className="flex flex-col gap-4 z-20 bg-[#008CFF]/40 rounded-lg p-4 justify-start items-center mt-2 border border-white">
+              <motion.div
+                className="flex flex-col gap-4 bg-[#2A4DA7]/80 backdrop-blur-xl 
+                     rounded-lg p-3 justify-start items-center mt-2 mx-2 
+                     border border-white absolute bottom-0 z-20 lg:mx-10 lg:w-[60%]"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+              >
                 <h3 className="font-bold text-lg">Detalhes Visão Gerencial</h3>
                 <p>
                   Já nesta visualização, você acompanha em tempo real todos os
@@ -241,7 +307,14 @@ export default function Home() {
                   permitindo a personalização e organização de cada interação
                   com os clientes.
                 </p>
-              </div>
+                <motion.button
+                  className="px-4 py-2 bg-red-700 rounded-lg cursor-pointer"
+                  onClick={toggleDetalhesVisaoCliente}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  Fechar
+                </motion.button>
+              </motion.div>
             )}
           </div>
         </div>
@@ -287,14 +360,14 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 mb-10 bg-linear-to-br from-[#0044AA] to-[#11AAFF] border border-[#336699] rounded-xl shadow-2xl px-4 py-4">
+        <div className="flex flex-col items-center justify-center text-center h-80 lg:h-140 mt-10 mx-3 mb-10 bg-linear-to-br from-[#0044AA] to-[#11AAFF] border border-[#336699] rounded-xl shadow-2xl px-4 py-4">
           <iframe
             src="https://www.youtube.com/embed/MO9O68kVaFs"
             title="YouTube video player"
             frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allow="accelerometer; clipboard-write; encrypted-media; picture-in-picture; web-share"
             allowFullScreen
-            className="w-full rounded-lg"
+            className="w-full h-[90%] rounded-lg"
           ></iframe>
         </div>
         <footer className="flex flex-col bg-[#3A3A3A] px-4 pt-4 gap-6">
