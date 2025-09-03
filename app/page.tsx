@@ -5,6 +5,14 @@ import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import Header from "./components/Header/Header";
+import { register } from "swiper/element/bundle";
+
+register();
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
+import Slider from "./components/Slider/Slider";
 
 export default function Home() {
   const [detalhesVisaoCliente, setDetalhesVisaoCliente] = useState(false);
@@ -48,7 +56,33 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        {/* Title Desktop */}
+        {/* Title e Cards Title Desktop */}
+        <div className="mx-20 mt-20 justify-between hidden xl:flex">
+          <div>
+            <h1 className="text-6xl titleDesk tracking-[15%]">GOTOLKY</h1>
+            <h2 className="text-3xl mt-10">
+              <span className="font-bold">CRM</span> integrado
+              <br />
+              com <span className="font-bold">INTELIGÊNCIA ARITIFICIAL</span>
+              <br />
+              conctado ao seu <span className="font-bold">WHATSAPP</span>
+            </h2>
+          </div>
+          <div className="flex gap-3 flex-wrap w-[40%]">
+            <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80">
+              <img src="/GotolkyLogo.png" alt="GoTolky Logo" className="w-50" />
+            </div>
+            <div className="bg-[#484848]/40 backdrop-blur-lg w-50 h-60 rounded-lg"></div>
+            <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80">
+              <img src="/ai-vector.png" alt="Vector de IA" className="w-40" />
+            </div>
+            <div className="bg-[#484848]/40 backdrop-blur-lg w-50 h-60 rounded-lg"></div>
+            <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80 -mt-20">
+              <img src="/WhatsApp.png" alt="WhatsApp Logo" className="w-40" />
+            </div>
+            <div className="bg-[#484848]/40 backdrop-blur-lg w-50 h-60 rounded-lg"></div>
+          </div>
+        </div>
         {/* Card Mobile */}
         <div className="mt-10 justify-center flex lg:hidden">
           <div className="rounded-lg flex items-center justify-center gap-3">
@@ -64,7 +98,7 @@ export default function Home() {
           </div>
         </div>
         {/* Card Tablet */}
-        <div className="mt-10 justify-center gap-4 hidden lg:flex">
+        <div className="mt-10 justify-center gap-4 hidden lg:flex xl:hidden">
           <div className="flex items-center justify-center w-70 h-30 pointer-events-none select-none bg-[#747474]/40 backdrop-blur-lg border border[#7E7E7E] rounded-xl shadow-lg py-4 px-2">
             <Image
               src="/GoTolkyLogo.png"
@@ -91,16 +125,17 @@ export default function Home() {
           </div>
         </div>
         <div className="flex flex-col items-center justify-center text-center mt-10 mx-2">
-          <p className="text-md font-light w-[70%] lg:w-[30%] tracking-widest">
+          <p className="text-md font-light w-[70%] lg:w-[30%] xl:w-[14%] tracking-widest">
             <span className="font-medium">Hoje</span> a sua empresa pode ter uma
             IA do seu jeito!
           </p>
           <IoIosArrowDown className="text-4xl text-[#484848]" />
         </div>
-        <div
+        <section
           id="produto"
           className="flex flex-col items-center justify-center text-center mt-10 mx-3"
         >
+          {/* Card Info Mobiles */}
           <ul className="text-center gap-2 lg:hidden">
             <li className="bg-[#7E7E7E]/50 backdrop-blur-lg border border-[#7E7E7E] rounded-xl shadow-lg p-4 mb-4 gap-2">
               <h2 className="text-lg font-medium">O Tempo Importa</h2>
@@ -129,7 +164,7 @@ export default function Home() {
             </li>
           </ul>
           {/* Cards Produto Tablet */}
-          <div className="justify-between items-center mx-30 w-[80%] hidden lg:flex">
+          <div className="justify-between items-center mx-30 w-[80%] hidden lg:flex xl:hidden">
             <div className="items-center justify-center text-center bg-[#6C6C6C]/40 border border-[#777777] p-4 hidden w-[70%] h-55 lg:flex">
               <div className="bg-[#DDDFE2]/50 rounded-lg p-4 flex flex-col gap-3 h-45 ">
                 <h2 className="text-lg font-medium">O Tempo Importa</h2>
@@ -143,7 +178,7 @@ export default function Home() {
             </div>
             <img src="/mulher-triste.png" className="h-55" />
           </div>
-          <div className="justify-between items-center mx-30 mt-5 w-[80%] hidden lg:flex">
+          <div className="justify-between items-center mx-30 mt-5 w-[80%] hidden lg:flex xl:hidden">
             <img src="/humano-ia-contato.png" className="h-55" />
             <div className="items-center justify-center text-center bg-[#6C6C6C]/40 border border-[#777777] p-4 hidden w-[70%] h-55 lg:flex">
               <div className="bg-[#DDDFE2]/50 rounded-lg p-4 flex flex-col gap-3 h-45">
@@ -156,15 +191,14 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="justify-between items-center mx-30 mt-5 w-[80%] hidden lg:flex">
+          <div className="justify-between items-center mx-30 mt-5 w-[80%] hidden lg:flex xl:hidden">
             <div className="items-center justify-center text-center bg-[#6C6C6C]/40 border border-[#777777] p-4 hidden w-[70%] h-55 lg:flex">
               <div className="bg-[#DDDFE2]/50 rounded-lg p-4 flex flex-col gap-3 h-45">
                 <h2 className="text-lg font-medium">O Simples Importa</h2>
                 <p className="font-light text-lg">
                   Além disso, você conta com um{" "}
                   <span className="font-bold">CRM</span> conectado diretamente
-                  ao
-                  <span className="font-bold">WhatsApp</span>, centralizando
+                  ao <span className="font-bold">WhatsApp</span>, centralizando
                   toda a comunicação em um só lugar. Para completar, tem à
                   disposição uma assistente virtual do seu jeito!
                 </p>
@@ -172,40 +206,43 @@ export default function Home() {
             </div>
             <img src="/notebook-aberto.png" className="h-55" />
           </div>
+        </section>
+        <div className="hidden xl:flex mx-30 mb-10 items-center justify-center h-100">
+          <Slider />
         </div>
-        <div
+        <section
           id="missao"
           className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-5 mb-10"
         >
-          <div className="flex flex-col gap-5 tracking-[13%]">
+          <div className="flex flex-col xl:flex-row gap-5 tracking-[13%]">
             <h2 className="text-4xl unico">SER ÚNICO</h2>
             <h2 className="text-4xl e">É</h2>
-            <h2 className="text-4xl ">SER DIFERENTE</h2>
+            <h2 className="text-4xl">SER DIFERENTE</h2>
           </div>
-          <div className="flex flex-col gap-4">
-            <p>
+          <div className="flex flex-col gap-4 mx-4 xl:mx-30 xl:flex-row xl:gap-6">
+            <p className="xl:bg-[#DDDFE2]/50 xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
               O melhor desempenho acontece quando sua empresa transmite valor em
               cada <span className="font-bold italic">mensagem</span> e{" "}
               <span className="font-bold italic">áudio</span>.
             </p>
-            <p>
+            <p className="xl:bg-[#DDDFE2]/50 xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
               Com uma IA que reflete seus{" "}
               <span className="font-bold italic">valores</span> e{" "}
               <span className="font-bold italic">cultura</span>, cada interação
               mostra quem você realmente é!
             </p>
-            <p>
+            <p className="xl:bg-[#DDDFE2]/50 xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
               Mais do que responder rápido, ela cria conexões reais, tornando
               cada interação única, humana e memorável
             </p>
           </div>
+        </section>
+        <div className="text-center">
+          <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
+          <p>Veja a seguir um exemplo das visõse de cada um:</p>
         </div>
-        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3 mb-10">
-          <div className="my-8">
-            <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
-            <p>Veja a seguir um exemplo das visõse de cada um:</p>
-          </div>
-          <div className="flex flex-col justify-center items-center relative mx-2 lg:mx10">
+        <div className="flex flex-col xl:flex-row items-center xl:items-start xl:align-top justify-center text-center mt-10 mx-3 xl:mx-30 gap-3 mb-10">
+          <div className="flex flex-col justify-center items-center xl:align-top relative mx-2 lg:mx10">
             <h3 className="text-2xl font-bold">Visão do Cliente</h3>
             <p>
               Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa
@@ -262,8 +299,8 @@ export default function Home() {
               </motion.div>
             )}
           </div>
-          <div className="flex flex-col justify-center items-center relative mt-10 mx-2 lg:mx-10">
-            <h3 className="text-2xl font-bold mt-10">Visão do Gerente</h3>
+          <div className="flex flex-col justify-center items-center xl:align-top relative mx-2 lg:mx10">
+            <h3 className="text-2xl font-bold mt-10 xl:mt-0">Visão do Gerente</h3>
             <p>
               Com um CRM integrado ao Whatsapp, você terá controle total sobre
               os atendimentos, podendo acompanhar e analisar cada interação.
@@ -309,7 +346,7 @@ export default function Home() {
                 </p>
                 <motion.button
                   className="px-4 py-2 bg-red-700 rounded-lg cursor-pointer"
-                  onClick={toggleDetalhesVisaoCliente}
+                  onClick={toggleDetalhesVisaoGerencial}
                   whileTap={{ scale: 0.9 }}
                 >
                   Fechar
@@ -318,7 +355,7 @@ export default function Home() {
             )}
           </div>
         </div>
-        <div
+        <section
           id="quemsomos"
           className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3 mb-10"
         >
@@ -359,8 +396,8 @@ export default function Home() {
               inteligente.
             </p>
           </div>
-        </div>
-        <div className="flex flex-col items-center justify-center text-center h-80 lg:h-140 mt-10 mx-3 mb-10 bg-linear-to-br from-[#0044AA] to-[#11AAFF] border border-[#336699] rounded-xl shadow-2xl px-4 py-4">
+        </section>
+        <div className="flex flex-col items-center justify-center text-center h-80 lg:h-140 lg:h-180 mt-10 mx-3 xl:mx-30 mb-10 bg-linear-to-br from-[#0044AA] to-[#11AAFF] border border-[#336699] rounded-xl shadow-2xl px-4 py-4 xl:py-2">
           <iframe
             src="https://www.youtube.com/embed/MO9O68kVaFs"
             title="YouTube video player"
