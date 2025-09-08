@@ -47,9 +47,8 @@ export default function Slider() {
     <Swiper
       slidesPerView={1}
       pagination={{ clickable: true }}
-      navigation
-      color="#fff"
-    >
+
+>
       {cardsInfo.map((item) => (
         <SwiperSlide
           key={item.id}
@@ -57,7 +56,7 @@ export default function Slider() {
         >
           <div className="flex justify-between items-center mx-6">
             <div className="bg-[#6C6C6C]/40 backdrop-blur-lg mx-6 p-6 rounded-xl border border-[#777777] h-80 justify-center items-center flex">
-              <div className="bg-[#DDDFE2]/40 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-8 h-65">
+              <div className="bg-[#DDDFE2]/40 p-4 rounded-xl flex flex-col items-center justify-center text-center gap-8 h-65 shadow-xl ">
                 <h3 className="font-bold text-2xl">{item.title}</h3>
                 {item.texto}
               </div>

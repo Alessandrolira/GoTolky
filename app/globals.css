@@ -2,35 +2,40 @@
 
 :root {
   --bgCard: #7c7c7c;
-  --border: #7E7E7E;
+  --border: #7e7e7e;
   --cinza: #373737;
   --cinza2: #424242;
   --cinzaClick: #646060;
-  --branco: #D9D9D9;
+  --branco: #d9d9d9;
   --branco2: #bfbfbf;
-  --azul: #008CFF;
-  --azulw3: #1A3F7D;
-  --azulEscuro: #0E1A2B;
-  --azulClaro: #6C8BCF;
-  --amarelo: #F2B705;
-  --vermelho: #EB155B;
-
+  --azul: #008cff;
+  --azulw3: #1a3f7d;
+  --azulEscuro: #0e1a2b;
+  --azulClaro: #6c8bcf;
+  --amarelo: #f2b705;
+  --vermelho: #eb155b;
 }
 
 @font-face {
-  font-family: 'JetBrains Mono';
+  font-family: "JetBrains Mono";
   font-style: normal;
   font-weight: 100 800;
-  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/s/jetbrainsmono/v23/tDbV2o-flEEny0FZhsfKu5WU4xD7OwE.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Padyakke Expanded One';
+  font-family: "Padyakke Expanded One";
   font-style: normal;
   font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/padyakkeexpandedone/v7/K2FvfY9El_tbR0JfHb6WWvrBaU6XAUvC4IAoP65l.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url(https://fonts.gstatic.com/s/padyakkeexpandedone/v7/K2FvfY9El_tbR0JfHb6WWvrBaU6XAUvC4IAoP65l.woff2)
+    format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
@@ -171,7 +176,7 @@
 body {
   font-family: "Lufga", sans-serif;
   font-size: 16px;
-  color: #e0e0e0
+  color: #e0e0e0;
 }
 
 .unico {
@@ -202,4 +207,8 @@ body {
 
 .titleDesk {
   font-family: "Bebas Neue", sans-serif;
+}
+
+neon {
+  text-shadow: 0 0 3px #fff, 0 0 6px #fff;
 }

@@ -32,18 +32,18 @@ export default function Home() {
   return (
     <AnimatePresence>
       <div className="min-h-screen min-w-screen p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
-        <div className="flex w-full justify-center">
+        <div className="flex justify-center">
           <Header />
         </div>
         {/* Title Mobile */}
         <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3.5 lg:hidden">
-          <h1 className="font-semibold tracking-widest text-[1.7em]">CRM</h1>
-          <h1 className="font-semibold tracking-widest text-[1.7em]">+</h1>
-          <h1 className="font-semibold tracking-widest text-[1.7em]">
+          <span className="font-semibold tracking-widest text-[1.7em]">CRM</span>
+          <span className="font-semibold tracking-widest text-[1.7em]">+</span>
+          <span className="font-semibold tracking-widest text-[1.7em]">
             ARITIFICIAL INTELLIGENCE
-          </h1>
-          <h1 className="font-semibold text-[1.7em]">+</h1>
-          <h1 className="font-semibold text-[1.7em]">WHATSAPP</h1>
+          </span>
+          <span className="font-semibold text-[1.7em]">+</span>
+          <span className="font-semibold text-[1.7em]">WHATSAPP</span>
         </div>
         {/* Title Tablet */}
         <div className="items-center justify-center text-center mt-10 mx-15 bg-[#6C6C6C]/40 border border-[#777777] py-10 hidden lg:flex xl:hidden">
@@ -59,28 +59,47 @@ export default function Home() {
         {/* Title e Cards Title Desktop */}
         <div className="mx-20 mt-20 justify-between hidden xl:flex">
           <div>
-            <h1 className="text-6xl titleDesk tracking-[15%]">GOTOLKY</h1>
-            <h2 className="text-3xl mt-10">
-              <span className="font-bold">CRM</span> integrado
+            <motion.h1
+              className="text-6xl titleDesk tracking-[15%]"
+              animate={{ x: [-300, 0] }}
+              transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
+            >
+              GOTOLKY
+            </motion.h1>
+            <motion.h2
+              className="text-3xl mt-10"
+              animate={{ x: [-700, 0] }}
+              transition={{ duration: 1, delay: 0.8, ease: "easeInOut" }}
+            >
+              <span className="font-semibold duration-300 hover:[text-shadow:0_0_10px_#ffffffa3,0_0_20px_#ffffffa3,0_0_40px_#ffffffa3] hover:neon reduce-motion:animate-none">
+                CRM
+              </span>{" "}
+              integrado
               <br />
-              com <span className="font-bold">INTELIGÊNCIA ARITIFICIAL</span>
+              com{" "}
+              <span className="font-semibold duration-300 hover:[text-shadow:0_0_10px_#ffffffa3,0_0_20px_#ffffffa3,0_0_40px_#ffffffa3] hover:neon reduce-motion:animate-none">
+                INTELIGÊNCIA ARITIFICIAL
+              </span>
               <br />
-              conctado ao seu <span className="font-bold">WHATSAPP</span>
-            </h2>
+              conctado ao seu{" "}
+              <span className="font-semibold duration-300 hover:[text-shadow:0_0_10px_#ffffffa3,0_0_20px_#ffffffa3,0_0_40px_#ffffffa3] hover:neon reduce-motion:animate-none">
+                WHATSAPP
+              </span>
+            </motion.h2>
           </div>
-          <div className="flex gap-3 flex-wrap w-[40%]">
-            <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80">
+          <div className="flex gap-3 flex-wrap w-150">
+            <div className="bg-[#747474]/40 opacity-80 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none">
               <img src="/GoTolkyLogo.png" alt="GoTolky Logo" className="w-50" />
             </div>
-            <div className="bg-[#484848]/40 backdrop-blur-lg w-50 h-60 rounded-lg"></div>
-            <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80">
-              <img src="/ai-vector.png" alt="Vector de IA" className="w-40" />
+            <div className="bg-[#484848]/40 backdrop-blur-lg w-40 h-50 rounded-lg "></div>
+            <div className="bg-[#747474]/40 opacity-80 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none">
+              <img src="/ai-vector.png" alt="Vector de IA" className="w-35" />
             </div>
-            <div className="bg-[#484848]/40 backdrop-blur-lg w-50 h-60 rounded-lg"></div>
-            <div className="bg-[#747474]/40 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-50 h-80 -mt-20">
-              <img src="/WhatsApp.png" alt="WhatsApp Logo" className="w-40" />
+            <div className="bg-[#484848]/40 backdrop-blur-lg w-40 h-50 rounded-lg"></div>
+            <div className="bg-[#747474]/40 opacity-80 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none -mt-20">
+              <img src="/WhatsApp.png" alt="WhatsApp Logo" className="w-35" />
             </div>
-            <div className="bg-[#484848]/40 backdrop-blur-lg w-50 h-60 rounded-lg"></div>
+            <div className="bg-[#484848]/40 backdrop-blur-lg w-40 h-50 rounded-lg"></div>
           </div>
         </div>
         {/* Card Mobile */}
@@ -220,18 +239,18 @@ export default function Home() {
             <h2 className="text-4xl">SER DIFERENTE</h2>
           </div>
           <div className="flex flex-col gap-4 mx-4 xl:mx-30 xl:flex-row xl:gap-6">
-            <p className="xl:bg-[#DDDFE2]/50 xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
+            <p className="xl:bg-[#DDDFE2]/30 xl:border xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
               O melhor desempenho acontece quando sua empresa transmite valor em
               cada <span className="font-bold italic">mensagem</span> e{" "}
               <span className="font-bold italic">áudio</span>.
             </p>
-            <p className="xl:bg-[#DDDFE2]/50 xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
+            <p className="xl:bg-[#DDDFE2]/30 xl:border xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
               Com uma IA que reflete seus{" "}
               <span className="font-bold italic">valores</span> e{" "}
               <span className="font-bold italic">cultura</span>, cada interação
               mostra quem você realmente é!
             </p>
-            <p className="xl:bg-[#DDDFE2]/50 xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
+            <p className="xl:bg-[#DDDFE2]/30 xl:border xl:p-6 xl:rounded-xl xl:text-lg xl:w-1/3">
               Mais do que responder rápido, ela cria conexões reais, tornando
               cada interação única, humana e memorável
             </p>
@@ -239,28 +258,27 @@ export default function Home() {
         </section>
         <div className="text-center">
           <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
-          <p>Veja a seguir um exemplo das visõse de cada um:</p>
+          <p className="mt-3">Veja a seguir um exemplo das visõse de cada um:</p>
         </div>
         <div className="flex flex-col xl:flex-row items-center xl:items-start xl:align-top justify-center text-center mt-10 mx-3 xl:mx-30 gap-3 mb-10">
-          <div className="flex flex-col justify-center items-center xl:align-top relative mx-2 lg:mx10">
+          <div className="flex flex-col justify-center items-center xl:align-top relative mx-2 gap-4 lg:mx10">
             <h3 className="text-2xl font-bold">Visão do Cliente</h3>
             <p>
               Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa
               ferramenta, facilitando a vida no atendimento
             </p>
-            <Image
+            <img
               src="/mockupConversaCelular.gif"
-              width={220}
-              height={220}
               alt="Mockup do Iphone em .gif"
-              className="mt-10"
+              className="w-70"
             />
-            <button
-              className="bg-[#1F1F1F] rounded-xl shadow-lg py-2 px-8 mt-8 cursor-pointer"
+            <motion.button
+              className="px-4 py-2 bg-gray-700 rounded-lg cursor-pointer"
               onClick={toggleDetalhesVisaoCliente}
+              whileTap={{ scale: 0.9 }}
             >
               Detalhes
-            </button>
+            </motion.button>
             {detalhesVisaoCliente && (
               <motion.div
                 className="flex flex-col gap-4 bg-[#2A4DA7]/80 backdrop-blur-xl 
@@ -290,7 +308,7 @@ export default function Home() {
                   continuidade no atendimento.
                 </p>
                 <motion.button
-                  className="px-4 py-2 bg-red-700 rounded-lg cursor-pointer"
+                  className="px-4 py-2 bg-white text-black rounded-lg cursor-pointer"
                   onClick={toggleDetalhesVisaoCliente}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -299,25 +317,26 @@ export default function Home() {
               </motion.div>
             )}
           </div>
-          <div className="flex flex-col justify-center items-center xl:align-top relative mx-2 lg:mx10">
-            <h3 className="text-2xl font-bold mt-10 xl:mt-0">Visão do Gerente</h3>
+          <div className="flex flex-col justify-center items-center xl:align-top relative gap-4 mx-2 lg:mx10">
+            <h3 className="text-2xl font-bold mt-10 xl:mt-0">
+              Visão do Gerente
+            </h3>
             <p>
               Com um CRM integrado ao Whatsapp, você terá controle total sobre
               os atendimentos, podendo acompanhar e analisar cada interação.
             </p>
-            <Image
+            <img
               src="/mockupLaptop.png"
-              width={420}
-              height={420}
               alt="Mockup do PC em foto"
-              className="mt-10"
+              className="w-220"
             />
-            <button
-              className="bg-[#1F1F1F] rounded-xl shadow-lg py-2 px-8 mt-8"
+            <motion.button
+              className="px-4 py-2 bg-gray-700 rounded-lg cursor-pointer mt-6"
               onClick={toggleDetalhesVisaoGerencial}
+              whileTap={{ scale: 0.9 }}
             >
               Detalhes
-            </button>
+            </motion.button>
             {detalhesVisaoGerencial && (
               <motion.div
                 className="flex flex-col gap-4 bg-[#2A4DA7]/80 backdrop-blur-xl 
@@ -345,7 +364,7 @@ export default function Home() {
                   com os clientes.
                 </p>
                 <motion.button
-                  className="px-4 py-2 bg-red-700 rounded-lg cursor-pointer"
+                  className="px-4 py-2 bg-white text-black rounded-lg cursor-pointer"
                   onClick={toggleDetalhesVisaoGerencial}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -357,7 +376,7 @@ export default function Home() {
         </div>
         <section
           id="quemsomos"
-          className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3 mb-10"
+          className="flex flex-col items-center justify-center text-center mt-10 mx-3 xl:mx-30 gap-3 mb-10"
         >
           <h3 className="font-bold text-4xl">QUEM SOMOS</h3>
           <div className="flex flex-col gap-4  mt-4 bg-[#008CFF]/40 backdrop-blur-lg border border-white rounded-xl shadow-lg p-6">
@@ -407,8 +426,9 @@ export default function Home() {
             className="w-full h-[90%] rounded-lg"
           ></iframe>
         </div>
-        <footer className="flex flex-col bg-[#3A3A3A] px-4 pt-4 gap-6">
-          <ul className="flex flex-col text-start gap-1">
+        <footer className="flex flex-col bg-[#3A3A3A] px-4 pt-4 gap-2">
+          <div className="flex flex-col xl:flex-row xl:justify-between gap-6">
+            <ul className="flex flex-col text-start gap-1">
             <p className="text-2xl font-bold mb-2">Contato</p>
             <li>contato@GoTolky.com.br</li>
             <li>+55 1198823-3222</li>
@@ -418,7 +438,8 @@ export default function Home() {
             <p className="text-2xl font-bold mb-2">Endereço</p>
             <li>Rua da Consolação, 368 - São Paulo, SP</li>
           </ul>
-          <p className="text-center text-gray-500 text-[0.5em] md:text-[0.8em] p-2">
+          </div>
+          <p className="text-center text-gray-500 text-[0.5em] md:text-[0.8em] p-4">
             &copy; {new Date().getFullYear()} GoTolky. Todos os direitos
             reservados.
           </p>
