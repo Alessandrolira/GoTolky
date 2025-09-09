@@ -31,13 +31,15 @@ export default function Home() {
 
   return (
     <AnimatePresence>
-      <div className="min-h-screen min-w-screen p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
+      <div className="scroll-smooth min-h-screen min-w-screen p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
         <div className="flex justify-center">
           <Header />
         </div>
         {/* Title Mobile */}
         <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3.5 lg:hidden">
-          <span className="font-semibold tracking-widest text-[1.7em]">CRM</span>
+          <span className="font-semibold tracking-widest text-[1.7em]">
+            CRM
+          </span>
           <span className="font-semibold tracking-widest text-[1.7em]">+</span>
           <span className="font-semibold tracking-widest text-[1.7em]">
             ARITIFICIAL INTELLIGENCE
@@ -57,7 +59,7 @@ export default function Home() {
           </div>
         </div>
         {/* Title e Cards Title Desktop */}
-        <div className="mx-20 mt-20 justify-between hidden xl:flex">
+        <div className="mx-20 mt-30 justify-between hidden xl:flex ">
           <div>
             <motion.h1
               className="text-6xl titleDesk tracking-[15%]"
@@ -87,17 +89,17 @@ export default function Home() {
               </span>
             </motion.h2>
           </div>
-          <div className="flex gap-3 flex-wrap w-150">
-            <div className="bg-[#747474]/40 opacity-80 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none">
+          <div className="flex justify-center gap-3 flex-wrap w-150">
+            <div className="bg-[#747474]/40 opacity-70 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none">
               <img src="/GoTolkyLogo.png" alt="GoTolky Logo" className="w-50" />
             </div>
             <div className="bg-[#484848]/40 backdrop-blur-lg w-40 h-50 rounded-lg "></div>
-            <div className="bg-[#747474]/40 opacity-80 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none">
-              <img src="/ai-vector.png" alt="Vector de IA" className="w-35" />
+            <div className="bg-[#747474]/40 opacity-70 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none">
+              <img src="/ai-vector.png" alt="Vector de IA" className="w-30" />
             </div>
             <div className="bg-[#484848]/40 backdrop-blur-lg w-40 h-50 rounded-lg"></div>
-            <div className="bg-[#747474]/40 opacity-80 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none -mt-20">
-              <img src="/WhatsApp.png" alt="WhatsApp Logo" className="w-35" />
+            <div className="bg-[#747474]/40 opacity-70 backdrop-blur-lg border border-[#888888] flex justify-center items-center rounded-lg w-40 h-70 hover:opacity-100 z-1 duration-300 reduce-motion:animate-none -mt-20">
+              <img src="/WhatsApp.png" alt="WhatsApp Logo" className="w-30" />
             </div>
             <div className="bg-[#484848]/40 backdrop-blur-lg w-40 h-50 rounded-lg"></div>
           </div>
@@ -233,7 +235,7 @@ export default function Home() {
           id="missao"
           className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-5 mb-10"
         >
-          <div className="flex flex-col xl:flex-row gap-5 tracking-[13%]">
+          <div className="flex flex-col xl:flex-row gap-5 items-bottom tracking-[13%]">
             <h2 className="text-4xl unico">SER ÚNICO</h2>
             <h2 className="text-4xl e">É</h2>
             <h2 className="text-4xl">SER DIFERENTE</h2>
@@ -256,122 +258,114 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <div className="text-center">
-          <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
-          <p className="mt-3">Veja a seguir um exemplo das visõse de cada um:</p>
-        </div>
-        <div className="flex flex-col xl:flex-row items-center xl:items-start xl:align-top justify-center text-center mt-10 mx-3 xl:mx-30 gap-3 mb-10">
-          <div className="flex flex-col justify-center items-center xl:align-top relative mx-2 gap-4 lg:mx10">
-            <h3 className="text-2xl font-bold">Visão do Cliente</h3>
-            <p>
-              Vinculado ao Whatsapp, seu atendimento será 100% utilizando essa
-              ferramenta, facilitando a vida no atendimento
+        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3">
+          <div className="text-center">
+            <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
+            <p className="mt-3">
+              Veja a seguir um exemplo das visões de cada um:
             </p>
-            <img
-              src="/mockupConversaCelular.gif"
-              alt="Mockup do Iphone em .gif"
-              className="w-70"
-            />
-            <motion.button
-              className="px-4 py-2 bg-gray-700 rounded-lg cursor-pointer"
-              onClick={toggleDetalhesVisaoCliente}
-              whileTap={{ scale: 0.9 }}
-            >
-              Detalhes
-            </motion.button>
-            {detalhesVisaoCliente && (
-              <motion.div
-                className="flex flex-col gap-4 bg-[#2A4DA7]/80 backdrop-blur-xl 
-                     rounded-lg p-3 justify-start items-center mt-2 mx-2 
-                     border border-white absolute z-20 lg:mx-10 lg:w-[60%]"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ ease: "easeInOut" }}
-              >
-                <h3 className="font-bold">Detalhes Visão Cliente</h3>
-                <p>
-                  Nesta visão, o seu cliente visualizará todas as mensagens como
-                  parte de um atendimento convencional, sem a necessidade de
-                  utilizar outro aplicativo ou sistema para se comunicar com a
-                  sua equipe.
-                </p>
-                <p>
-                  O atendimento é fluido e contextual, dispensando o uso de
-                  palavras-chave para que a ferramenta entenda o assunto
-                  tratado. Ela é capaz de compreender as mensagens de forma
-                  natural, como faria um atendente humano.
-                </p>
-                <p>
-                  Além disso, seu cliente será notificado quando um atendente
-                  humano assumir a conversa, garantindo transparência e
-                  continuidade no atendimento.
-                </p>
-                <motion.button
-                  className="px-4 py-2 bg-white text-black rounded-lg cursor-pointer"
-                  onClick={toggleDetalhesVisaoCliente}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  Fechar
-                </motion.button>
-              </motion.div>
-            )}
           </div>
-          <div className="flex flex-col justify-center items-center xl:align-top relative gap-4 mx-2 lg:mx10">
-            <h3 className="text-2xl font-bold mt-10 xl:mt-0">
-              Visão do Gerente
-            </h3>
-            <p>
-              Com um CRM integrado ao Whatsapp, você terá controle total sobre
-              os atendimentos, podendo acompanhar e analisar cada interação.
-            </p>
-            <img
-              src="/mockupLaptop.png"
-              alt="Mockup do PC em foto"
-              className="w-220"
-            />
-            <motion.button
-              className="px-4 py-2 bg-gray-700 rounded-lg cursor-pointer mt-6"
-              onClick={toggleDetalhesVisaoGerencial}
-              whileTap={{ scale: 0.9 }}
-            >
-              Detalhes
-            </motion.button>
-            {detalhesVisaoGerencial && (
-              <motion.div
-                className="flex flex-col gap-4 bg-[#2A4DA7]/80 backdrop-blur-xl 
-                     rounded-lg p-3 justify-start items-center mt-2 mx-2 
-                     border border-white absolute bottom-0 z-20 lg:mx-10 lg:w-[60%]"
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
+          <div className="mt-10 mb-14 mx-3 xl:grid xl:grid-cols-2 gap-10 h-[70%] w-[94%] relative">
+            <div className="flex flex-col items-center justify-between text-center gap-2 mt-10 h-180">
+              <div>
+                <h3 className="text-2xl font-bold">Visão do Cliente</h3>
+                <p>
+                  Vinculado ao WhatsApp, seu atendimento será 100% utilizando
+                  essa ferramenta, facilitando a vida no atendimento
+                </p>
+              </div>
+              <img
+                src="/mockupConversaCelular.gif"
+                alt="Visão do Cliente em .gif"
+                className="w-70 mt-10"
+              />
+              <button
+                onClick={toggleDetalhesVisaoCliente}
+                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-10 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
               >
-                <h3 className="font-bold text-lg">Detalhes Visão Gerencial</h3>
+                Detalhes
+              </button>
+              {detalhesVisaoCliente && (
+                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute bottom-20 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 w-[40%]">
+                  <h4 className="font-bold text-xl">
+                    Detalhes Visão do Cliente
+                  </h4>
+                  <p>
+                    Nesta visão, o seu cliente visualizará todas as mensagens
+                    como parte de um atendimento convencional, sem a necessidade
+                    de utilizar outro aplicativo ou sistema para se comunicar
+                    com a sua equipe.
+                  </p>
+                  <p>
+                    O atendimento é fluido e contextual, dispensando o uso de
+                    palavras-chave para que a ferramenta entenda o assunto
+                    tratado. Ela é capaz de compreender as mensagens de forma
+                    natural, como faria um atendente humano.
+                  </p>
+                  <p>
+                    Além disso, seu cliente será notificado quando um atendente
+                    humano assumir a conversa, garantindo transparência e
+                    continuidade no atendimento.
+                  </p>
+                  <button
+                    onClick={() => setDetalhesVisaoCliente(false)}
+                    className="bg-white text-black py-2 px-4 rounded-lg mt-4 active:scale-95 duration-100"
+                  >
+                    Fechar
+                  </button>
+                </div>
+              )}
+            </div>
+            <div className="flex flex-col items-center justify-between text-center mt-10 h-180">
+              <div>
+                <h3 className="text-2xl font-bold">Visão do Gerente</h3>
                 <p>
-                  Já nesta visualização, você acompanha em tempo real todos os
-                  atendimentos realizados pela IA, podendo intervir a qualquer
-                  momento para assumir a conversa com o cliente, caso julgue
-                  necessário.
+                  Com um CRM integrado ao Whatsapp, você terá controle total
+                  sobre os atendimentos, podendo acompanhar e analisar cada
+                  interação.
                 </p>
-                <p>
-                  É possível também atribuir o atendimento a um atendente
-                  específico da sua equipe, facilitando a gestão e o
-                  acompanhamento interno dos atendimentos.
-                </p>
-                <p>
-                  Cada equipe conta com um número de atendimento próprio,
-                  permitindo a personalização e organização de cada interação
-                  com os clientes.
-                </p>
-                <motion.button
-                  className="px-4 py-2 bg-white text-black rounded-lg cursor-pointer"
-                  onClick={toggleDetalhesVisaoGerencial}
-                  whileTap={{ scale: 0.9 }}
-                >
-                  Fechar
-                </motion.button>
-              </motion.div>
-            )}
+              </div>
+              <img
+                src="/mockupLaptop.png"
+                alt="Visão do Cliente em .gif"
+                className="mt-10 w-100 lg:w-200 xl:w-auto"
+              />
+              <button
+                onClick={toggleDetalhesVisaoGerencial}
+                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-10 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
+              >
+                Detalhes
+              </button>
+              {detalhesVisaoGerencial && (
+                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute bottom-20 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 w-[40%]">
+                  <h4 className="font-bold text-xl">
+                    Detalhes Visão do Gerente
+                  </h4>
+                  <p>
+                    Já nesta visualização, você acompanha em tempo real todos os
+                    atendimentos realizados pela IA, podendo intervir a qualquer
+                    momento para assumir a conversa com o cliente, caso julgue
+                    necessário.
+                  </p>
+                  <p>
+                    É possível também atribuir o atendimento a um atendente
+                    específico da sua equipe, facilitando a gestão e o
+                    acompanhamento interno dos atendimentos.
+                  </p>
+                  <p>
+                    Cada equipe conta com um número de atendimento próprio,
+                    permitindo a personalização e organização de cada interação
+                    com os clientes.
+                  </p>
+                  <button
+                    onClick={() => setDetalhesVisaoGerencial(false)}
+                    className="bg-white text-black py-2 px-4 rounded-lg mt-4 active:scale-95 duration-100"
+                  >
+                    Fechar
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
         <section
@@ -379,7 +373,7 @@ export default function Home() {
           className="flex flex-col items-center justify-center text-center mt-10 mx-3 xl:mx-30 gap-3 mb-10"
         >
           <h3 className="font-bold text-4xl">QUEM SOMOS</h3>
-          <div className="flex flex-col gap-4  mt-4 bg-[#008CFF]/40 backdrop-blur-lg border border-white rounded-xl shadow-lg p-6">
+          <div className="flex flex-col gap-4 mt-4 bg-[#00009f]/40 backdrop-blur-lg border border-white  rounded-xl shadow-lg p-6">
             <p className="text-lg">
               A GoTolky nasceu para{" "}
               <span className="font-bold">revolucionar</span> a forma como
@@ -426,18 +420,21 @@ export default function Home() {
             className="w-full h-[90%] rounded-lg"
           ></iframe>
         </div>
-        <footer className="flex flex-col bg-[#3A3A3A] px-4 pt-4 gap-2">
+        <footer
+          id="contato"
+          className="flex flex-col bg-[#3A3A3A] px-8 pt-4 gap-2"
+        >
           <div className="flex flex-col xl:flex-row xl:justify-between gap-6">
             <ul className="flex flex-col text-start gap-1">
-            <p className="text-2xl font-bold mb-2">Contato</p>
-            <li>contato@GoTolky.com.br</li>
-            <li>+55 1198823-3222</li>
-            <li>www.gotolky.com.br</li>
-          </ul>
-          <ul className="flex flex-col text-start gap-1">
-            <p className="text-2xl font-bold mb-2">Endereço</p>
-            <li>Rua da Consolação, 368 - São Paulo, SP</li>
-          </ul>
+              <p className="text-2xl font-bold mb-2">Contato</p>
+              <li>contato@GoTolky.com.br</li>
+              <li>+55 1198823-3222</li>
+              <li>www.gotolky.com.br</li>
+            </ul>
+            <ul className="flex flex-col text-start gap-1">
+              <p className="text-2xl font-bold mb-2">Endereço</p>
+              <li>Rua da Consolação, 368 - São Paulo, SP</li>
+            </ul>
           </div>
           <p className="text-center text-gray-500 text-[0.5em] md:text-[0.8em] p-4">
             &copy; {new Date().getFullYear()} GoTolky. Todos os direitos

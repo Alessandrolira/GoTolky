@@ -173,11 +173,11 @@ export default function Forms() {
           />
         </div>
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-10 gap-4">
           <button
             type="submit"
             disabled={loading}
-            className="cursor-pointer bg-gradient-to-r from-cyan-400 to-blue-600 text-white px-10 py-3 rounded-xl font-bold shadow-lg shadow-cyan-500/30 hover:scale-105 transition transform duration-300 disabled:opacity-60"
+            className="bg-[#D9D9D9] text-black px-6 py-2 text-lg rounded-lg hover:bg-linear-to-r hover:from-[#008CFF] hover:to-[#0D1847] hover:text-white hover:transform-[scale(1.05)] duration-150 active:transform-[scale(0.9)]"
           >
             {loading ? (
               <img src="/loader.png" alt="Load" className="w-[1.5em] animate-spin" />
@@ -185,6 +185,9 @@ export default function Forms() {
               "Enviar"
             )}
           </button>
+          <a href="/" className="bg-[#D9D9D9] text-black px-6 py-2 text-lg rounded-lg hover:bg-linear-to-r hover:from-[#008CFF] hover:to-[#0D1847] hover:text-white hover:transform-[scale(1.05)] duration-150 active:transform-[scale(0.9)]">
+            Voltar
+          </a>
         </div>
       </form>
       {/* Linhas decorativas tech */}
