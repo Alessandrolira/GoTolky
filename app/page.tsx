@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <AnimatePresence>
-      <div className="scroll-smooth min-h-screen min-w-screen p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
+      <div className="scroll-smooth w-full p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
         <div className="flex justify-center">
           <Header />
         </div>
@@ -328,7 +328,7 @@ export default function Home() {
               <img
                 src="/mockupLaptop.png"
                 alt="Visão do Cliente em .gif"
-                className="mt-10 w-100 lg:w-200 xl:w-auto"
+                className="mt-10 w-100 lg:w-200 xl:w-100"
               />
               <button
                 onClick={toggleDetalhesVisaoGerencial}
@@ -422,7 +422,7 @@ export default function Home() {
         </div>
         <footer
           id="contato"
-          className="flex flex-col bg-[#3A3A3A] px-8 pt-4 gap-2"
+          className="flex flex-col bg-[#3A3A3A] px-18 pt-4 gap-2"
         >
           <div className="flex flex-col xl:flex-row xl:justify-between gap-6">
             <ul className="flex flex-col text-start gap-1">
