@@ -309,7 +309,7 @@ export default function Home() {
                   </p>
                   <button
                     onClick={() => setDetalhesVisaoCliente(false)}
-                    className="bg-white text-black py-2 px-4 rounded-lg mt-4 active:scale-95 duration-100"
+                    className="bg-white text-black py-2 px-4 rounded-lg mt-4 active:scale-95 duration-100 cursor-pointer"
                   >
                     Fechar
                   </button>
@@ -359,7 +359,7 @@ export default function Home() {
                   </p>
                   <button
                     onClick={() => setDetalhesVisaoGerencial(false)}
-                    className="bg-white text-black py-2 px-4 rounded-lg mt-4 active:scale-95 duration-100"
+                    className="bg-white text-black py-2 px-4 rounded-lg mt-4 active:scale-95 duration-100 cursor-pointer"
                   >
                     Fechar
                   </button>
