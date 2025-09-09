@@ -36,7 +36,7 @@ export default function Home() {
           <Header />
         </div>
         {/* Title Mobile */}
-        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3 gap-3.5 lg:hidden">
+        <div className="flex flex-col items-center justify-center text-center mt-20 mx-3 gap-3.5 lg:hidden">
           <span className="font-semibold tracking-widest text-[1.7em]">
             CRM
           </span>
@@ -266,7 +266,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-10 mb-14 mx-3 xl:grid xl:grid-cols-2 gap-10 h-[70%] w-[94%] relative">
-            <div className="flex flex-col items-center justify-between text-center gap-2 mt-10 h-180">
+            <div className="flex flex-col items-center justify-between text-center mt-10 h-180">
               <div>
                 <h3 className="text-2xl font-bold">Visão do Cliente</h3>
                 <p>
@@ -286,7 +286,7 @@ export default function Home() {
                 Detalhes
               </button>
               {detalhesVisaoCliente && (
-                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute bottom-20 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 w-[40%]">
+                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
                   <h4 className="font-bold text-xl">
                     Detalhes Visão do Cliente
                   </h4>
@@ -337,7 +337,7 @@ export default function Home() {
                 Detalhes
               </button>
               {detalhesVisaoGerencial && (
-                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute bottom-20 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 w-[40%]">
+                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute bottom-20 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
                   <h4 className="font-bold text-xl">
                     Detalhes Visão do Gerente
                   </h4>
@@ -422,7 +422,7 @@ export default function Home() {
         </div>
         <footer
           id="contato"
-          className="flex flex-col bg-[#3A3A3A] px-18 pt-4 gap-2"
+          className="flex flex-col bg-[#3A3A3A] px-18 pt-6 gap-2"
         >
           <div className="flex flex-col xl:flex-row xl:justify-between gap-6">
             <ul className="flex flex-col text-start gap-1">
