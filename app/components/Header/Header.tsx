@@ -42,7 +42,7 @@ export default function Header() {
       transition={{ ease: "easeInOut", duration: 0.6 }}
       className="fixed inset-x-0 top-0 z-50 items-center flex justify-center"
     >
-      <div className="w-4/6">
+      <div className="w-8/9">
         <div className="-mt-1 lg:mt-2 flex h-14 lg:h-16 items-center justify-between bg-[#7C7C7C]/40 backdrop-blur-lg border border-[#7E7E7E] shadow-lg rounded-b-xl lg:rounded-full px-3 lg:px-4">
           <Link href="/" className="shrink-0 -ml-1" aria-label="Ir para a home">
             <Image
