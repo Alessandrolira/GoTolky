@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, easeInOut, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import Header from "./components/Header/Header";
@@ -59,7 +59,7 @@ export default function Home() {
           </div>
         </div>
         {/* Title e Cards Title Desktop */}
-        <div className="mx-20 mt-30 justify-between hidden xl:flex ">
+        <div className="mx-35 mt-30 justify-between hidden xl:flex ">
           <div>
             <motion.h1
               className="text-6xl titleDesk tracking-[15%]"
@@ -265,7 +265,7 @@ export default function Home() {
               Veja a seguir um exemplo das visões de cada um:
             </p>
           </div>
-          <div className="mt-10 mb-14 mx-3 xl:grid xl:grid-cols-2 gap-10 h-[70%] w-[94%] relative">
+          <div className="mt-10 mb-14 mx-3 xl:grid xl:grid-cols-2 gap-6 h-[70%] w-[94%] relative">
             <div className="flex flex-col items-center justify-between text-center mt-10 h-180">
               <div>
                 <h3 className="text-2xl font-bold">Visão do Cliente</h3>
@@ -277,7 +277,7 @@ export default function Home() {
               <img
                 src="/mockupConversaCelular.gif"
                 alt="Visão do Cliente em .gif"
-                className="w-70 mt-10"
+                className="w-50 lg:w-70 mt-10"
               />
               <button
                 onClick={toggleDetalhesVisaoCliente}
@@ -286,7 +286,7 @@ export default function Home() {
                 Detalhes
               </button>
               {detalhesVisaoCliente && (
-                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
+                <motion.div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:bottom-30 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
                   <h4 className="font-bold text-xl">
                     Detalhes Visão do Cliente
                   </h4>
@@ -313,7 +313,7 @@ export default function Home() {
                   >
                     Fechar
                   </button>
-                </div>
+                </motion.div>
               )}
             </div>
             <div className="flex flex-col items-center justify-between text-center mt-10 h-180">
@@ -328,7 +328,7 @@ export default function Home() {
               <img
                 src="/mockupLaptop.png"
                 alt="Visão do Cliente em .gif"
-                className="mt-10 w-100 lg:w-200 xl:w-100"
+                className="mt-10 w-100 lg:w-200 xl:w-200"
               />
               <button
                 onClick={toggleDetalhesVisaoGerencial}
@@ -337,7 +337,7 @@ export default function Home() {
                 Detalhes
               </button>
               {detalhesVisaoGerencial && (
-                <div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute bottom-20 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
+                <motion.div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:bottom-30 border rounded-lg flex flex-col items-center justify-center gap-4 py-4 px-6 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
                   <h4 className="font-bold text-xl">
                     Detalhes Visão do Gerente
                   </h4>
@@ -363,7 +363,7 @@ export default function Home() {
                   >
                     Fechar
                   </button>
-                </div>
+                </motion.div>
               )}
             </div>
           </div>
@@ -373,7 +373,7 @@ export default function Home() {
           className="flex flex-col items-center justify-center text-center mt-10 mx-3 xl:mx-30 gap-3 mb-10"
         >
           <h3 className="font-bold text-4xl">QUEM SOMOS</h3>
-          <div className="flex flex-col gap-4 mt-4 bg-[#00009f]/40 backdrop-blur-lg border border-white  rounded-xl shadow-lg p-6">
+          <div className="flex flex-col gap-4 mt-4 bg-linear-to-br from-[#0044AA] to-[#11AAFF] border border-[#336699] backdrop-blur-lg border border-white rounded-xl shadow-lg p-6">
             <p className="text-lg">
               A GoTolky nasceu para{" "}
               <span className="font-bold">revolucionar</span> a forma como
@@ -422,7 +422,7 @@ export default function Home() {
         </div>
         <footer
           id="contato"
-          className="flex flex-col bg-[#3A3A3A] px-18 pt-6 gap-2"
+          className="flex flex-col bg-[#3A3A3A] px-35 pt-6 gap-2"
         >
           <div className="flex flex-col xl:flex-row xl:justify-between gap-6">
             <ul className="flex flex-col text-start gap-1">
