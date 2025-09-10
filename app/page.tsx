@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <AnimatePresence>
-      <div className="scroll-smooth w-full p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
+      <div className="scroll-smooth w-full h-full p-0 m-0 bg-[radial-gradient(circle_at_-20%_-30%,#767676,transparent_30%),radial-gradient(circle_at_110%_10%,#767676,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)] lg:bg-[radial-gradient(circle_at_-10%_-15%,#868686,transparent_30%),radial-gradient(circle_at_110%_10%,#868686,transparent_10%),linear-gradient(180deg,#252525,#1F1F1F,#0D1847,#2A4DA7,#E4E4E4)]">
         <div className="flex justify-center">
           <Header />
         </div>
@@ -258,36 +258,18 @@ export default function Home() {
             </p>
           </div>
         </section>
-        <div className="flex flex-col items-center justify-center text-center mt-10 mx-3">
+        <div className="flex flex-col items-center text-center mt-10 mx-3">
           <div className="text-center">
             <h2 className="text-4xl font-bold">Cliente X Gerente</h2>
             <p className="mt-3">
               Veja a seguir um exemplo das visões de cada um:
             </p>
           </div>
-          <div className="mt-10 mb-14 mx-3 xl:grid xl:grid-cols-2 gap-6 h-[70%] w-[94%] relative">
-            <div className="flex flex-col items-center align-middle justify-between text-center mt-10 h-180">
-              <div>
-                <h3 className="text-2xl font-bold">Visão do Cliente</h3>
-                <p>
-                  Vinculado ao WhatsApp, seu atendimento será 100% utilizando
-                  essa ferramenta, facilitando a vida no atendimento
-                </p>
-              </div>
-              <img
-                src="/mockupConversaCelular.gif"
-                alt="Visão do Cliente em .gif"
-                className="w-50 lg:w-60"
-              />
-              <button
-                onClick={toggleDetalhesVisaoCliente}
-                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-5 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
-              >
-                Detalhes
-              </button>
+          <div className="mt-10 mb-14 mx-3 xl:grid xl:grid-cols-2 gap-6 h-[70%] w-[94%] relative items-center justify-center">
+            <div className="flex flex-col items-center content-center justify-between text-center mt-10 h-180">
               {detalhesVisaoCliente && (
                 <motion.div
-                  className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:top-1/4 border rounded-lg flex flex-col items-center justify-center gap-4 py-4 px-6 mx-6 z-1 lg:w-[40%] xl:w-[35%]"
+                  className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute mt-20 xl:mt-0 xl:bottom-40 border rounded-lg flex flex-col items-center content-center gap-4 py-4 px-6 z-1 lg:w-[40%] xl:w-[35%]"
                   initial={{ x: 320, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: 320, opacity: 0 }}
@@ -321,30 +303,29 @@ export default function Home() {
                   </button>
                 </motion.div>
               )}
-            </div>
-            <div className="flex flex-col items-center align-middle justify-between text-center mt-10 h-180">
               <div>
-                <h3 className="text-2xl font-bold">Visão do Gerente</h3>
+                <h3 className="text-2xl font-bold">Visão do Cliente</h3>
                 <p>
-                  Com um CRM integrado ao Whatsapp, você terá controle total
-                  sobre os atendimentos, podendo acompanhar e analisar cada
-                  interação.
+                  Vinculado ao WhatsApp, seu atendimento será 100% utilizando
+                  essa ferramenta, facilitando a vida no atendimento
                 </p>
               </div>
               <img
-                src="/mockupLaptop.png"
+                src="/mockupConversaCelular.gif"
                 alt="Visão do Cliente em .gif"
-                className="w-100 lg:w-200 xl:w-200"
+                className="w-52 lg:w-62"
               />
               <button
-                onClick={toggleDetalhesVisaoGerencial}
+                onClick={toggleDetalhesVisaoCliente}
                 className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-5 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
               >
                 Detalhes
               </button>
+            </div>
+            <div className="flex flex-col items-center align-middle justify-between text-center mt-10 h-180">
               {detalhesVisaoGerencial && (
                 <motion.div
-                  className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:top-1/4  border rounded-lg flex flex-col items-center justify-center gap-4 py-4 px-6 mx-6 z-10 lg:w-[40%] xl:w-[35%]"
+                  className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute mt-20 xl:mt-0 xl:bottom-40 border rounded-lg flex flex-col items-center justify-center gap-4 py-4 px-6 mx-6 z-10 lg:w-[40%] xl:w-[35%]"
                   initial={{ x: 320, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   exit={{ x: 320, opacity: 0 }}
@@ -377,6 +358,26 @@ export default function Home() {
                   </button>
                 </motion.div>
               )}
+              <div>
+                <h3 className="text-2xl font-bold">Visão do Gerente</h3>
+                <p>
+                  Com um CRM integrado ao Whatsapp, você terá controle total
+                  sobre os atendimentos, podendo acompanhar e analisar cada
+                  interação.
+                </p>
+              </div>
+              <img
+                src="/mockupLaptop.png"
+                alt="Visão do Cliente em .gif"
+                className="w-100 lg:w-200 xl:w-200"
+              />
+              <button
+                onClick={toggleDetalhesVisaoGerencial}
+                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-5 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
+              >
+                Detalhes
+              </button>
+              
             </div>
           </div>
         </div>
@@ -434,7 +435,7 @@ export default function Home() {
         </div>
         <footer
           id="contato"
-          className="flex flex-col bg-[#3A3A3A] px-35 pt-6 gap-2"
+          className="flex flex-col bg-[#3A3A3A] px-10 xl:px-35 pt-6 gap-2"
         >
           <div className="flex flex-col xl:flex-row xl:justify-between gap-6">
             <ul className="flex flex-col text-start gap-1">
