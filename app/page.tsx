@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import Header from "./components/Header/Header";
@@ -266,7 +266,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mt-10 mb-14 mx-3 xl:grid xl:grid-cols-2 gap-6 h-[70%] w-[94%] relative">
-            <div className="flex flex-col items-center justify-between text-center mt-10 h-180">
+            <div className="flex flex-col items-center align-middle justify-between text-center mt-10 h-180">
               <div>
                 <h3 className="text-2xl font-bold">Visão do Cliente</h3>
                 <p>
@@ -277,16 +277,22 @@ export default function Home() {
               <img
                 src="/mockupConversaCelular.gif"
                 alt="Visão do Cliente em .gif"
-                className="w-50 lg:w-70 mt-10"
+                className="w-50 lg:w-60"
               />
               <button
                 onClick={toggleDetalhesVisaoCliente}
-                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-10 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
+                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-5 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
               >
                 Detalhes
               </button>
               {detalhesVisaoCliente && (
-                <motion.div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:bottom-30 border rounded-lg flex flex-col items-center justify-center gap-4 p-4 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
+                <motion.div
+                  className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:top-1/4 border rounded-lg flex flex-col items-center justify-center gap-4 py-4 px-6 mx-6 z-1 lg:w-[40%] xl:w-[35%]"
+                  initial={{ x: 320, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 320, opacity: 0 }}
+                  transition={{ ease: easeInOut, duration: 0.5 }}
+                >
                   <h4 className="font-bold text-xl">
                     Detalhes Visão do Cliente
                   </h4>
@@ -316,7 +322,7 @@ export default function Home() {
                 </motion.div>
               )}
             </div>
-            <div className="flex flex-col items-center justify-between text-center mt-10 h-180">
+            <div className="flex flex-col items-center align-middle justify-between text-center mt-10 h-180">
               <div>
                 <h3 className="text-2xl font-bold">Visão do Gerente</h3>
                 <p>
@@ -328,16 +334,22 @@ export default function Home() {
               <img
                 src="/mockupLaptop.png"
                 alt="Visão do Cliente em .gif"
-                className="mt-10 w-100 lg:w-200 xl:w-200"
+                className="w-100 lg:w-200 xl:w-200"
               />
               <button
                 onClick={toggleDetalhesVisaoGerencial}
-                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-10 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
+                className="bg-[#7E7E7E] text-white text-lg py-2 px-4 rounded-lg mt-5 duration-100 cursor-pointer hover:scale-105 active:scale-95 hover:bg-[#9E9E9E]"
               >
                 Detalhes
               </button>
               {detalhesVisaoGerencial && (
-                <motion.div className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:bottom-30 border rounded-lg flex flex-col items-center justify-center gap-4 py-4 px-6 mx-6 z-10 lg:w-[50%] xl:w-[40%]">
+                <motion.div
+                  className="bg-[#2A4DA7]/80 backdrop-blur-lg absolute xl:top-1/4  border rounded-lg flex flex-col items-center justify-center gap-4 py-4 px-6 mx-6 z-10 lg:w-[40%] xl:w-[35%]"
+                  initial={{ x: 320, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 320, opacity: 0 }}
+                  transition={{ ease: easeInOut, duration: 0.5 }}
+                >
                   <h4 className="font-bold text-xl">
                     Detalhes Visão do Gerente
                   </h4>
